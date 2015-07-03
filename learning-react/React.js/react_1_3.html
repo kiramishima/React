@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <title>Props</title>
+  <head>
+    <script src="../../react-0.13.3/build/react.js"></script>
+    <script src="../../react-0.13.3/build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/jsx">
+
+      var CommentBox = React.createClass({
+        render: function() {
+          return (
+            <div className="commentBox">
+              <h1>Comments</h1>
+              <CommentList />
+              <CommentForm />
+            </div>
+          );
+        }
+      });
+
+      //Ejemplo de componente con propiedades
+      var CommentList = React.createClass({
+        render: function() {
+          return (
+            <div className="commentList">
+              <Comment author="Pete Hunt">This is one comment</Comment>
+              <Comment author="Jordan Walke">This is *another* comment</Comment>
+          </div>
+          );
+        }
+      });
+
+      var Comment = React.createClass({
+        render: function() {
+          return (
+            <div className="comment">
+              <h2 className="commentAuthor">
+                {this.props.author}
+              </h2>
+              {this.props.children}
+            </div>
+          );
+        }
+      });
+
+      var CommentForm = React.createClass({
+        render: function() {
+          return (
+            <form className="commentform">
+            </form>
+          );
+        }
+      });
+      React.render(
+        <CommentBox />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

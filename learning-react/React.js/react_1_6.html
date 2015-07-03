@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <title>State</title>
+  <head>
+    <script src="../../react-0.13.3/build/react.js"></script>
+    <script src="../../react-0.13.3/build/JSXTransformer.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script type="text/jsx">
+      var LikeButton = React.createClass({
+        getInitialState: function() {
+          return {liked: false}; //Estado inicial 
+        },
+        handleClick: function(event) {
+          this.setState({liked: !this.state.liked}); //Asignando el valor del estado
+        },
+        render: function() {
+          var text = this.state.liked ? 'like' : 'haven\'t liked';
+          return (
+            <p onClick={this.handleClick}>
+              You {text} this. Click to toggle.
+            </p>
+          );
+        }
+      });
+
+      React.render(
+        <LikeButton />,
+        document.getElementById('content')
+      );
+    </script>
+  </body>
+</html>

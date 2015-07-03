@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <title>Refs</title>
+  <head>
+    <script src="../../react-0.13.3/build/react.js"></script>
+    <script src="../../react-0.13.3/build/JSXTransformer.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script type="text/jsx">
+      var App = React.createClass({
+    getInitialState: function() {
+      return {userInput: ''};
+    },
+    handleChange: function(e) {
+      this.setState({userInput: e.target.value});
+    },
+    clearAndFocusInput: function() {
+      this.setState({userInput: ''}, function() {
+        this.refs.theInput.getDOMNode().focus();
+      });
+    },
+    render: function() {
+      return (
+        <div>
+          <div onClick={this.clearAndFocusInput}>
+            Click to Focus and Reset
+          </div>
+          <input
+            ref="theInput"
+            value={this.state.userInput}
+            onChange={this.handleChange}
+          />
+        </div>
+      );
+    }
+  });
+
+      React.render(
+        <App />,
+        document.getElementById('content')
+      );
+    </script>
+  </body>
+</html>

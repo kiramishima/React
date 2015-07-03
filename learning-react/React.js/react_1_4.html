@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<title>Library</title>
+  <head>
+    <script src="../../react-0.13.3/build/react.js"></script>
+    <script src="../../react-0.13.3/build/JSXTransformer.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/jsx">
+      var converter = new Showdown.converter();
+	  var Comment = React.createClass({
+		  render: function() {
+		    return (
+		      <div className="comment">
+		        <h2 className="commentAuthor">
+		          {this.props.author}
+		        </h2>
+		        {converter.makeHtml(this.props.children.toString())}
+		      </div>
+		    );
+		  }
+	  });
+    </script>
+  </body>
+</html>
