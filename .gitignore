@@ -10,7 +10,7 @@
 /tmp
 
 .DS_Store
-
+libs
 # Ignore npm related files
 node_modules
 .npm-debug.log
