@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import _ from 'lodash'
 import ItemHeader from './itemHeader.jsx'
 import ItemRow from './itemRow.jsx'
+import Rx from 'rx'
 
 export default class DataTableSAR extends Component {
     constructor (props) {
@@ -13,18 +14,40 @@ export default class DataTableSAR extends Component {
       this._loadDataFromServer = this._loadDataFromServer.bind(this)
     }
     _loadDataFromServer () {
-        (async () => {
+        /* (async () => {
             var data = await fetch(this.props.url)
             var dataParsed = await data.json()
             // console.log('d', dataParsed)
             this.setState({data: dataParsed.data})
-        })()
+        })()*/
+      return Rx.observable.create((observer) => {
+        var req = new XMLHttpRequest()
+        req.open('GET', this.props.url)
+
+        req.onload = () => {
+          if (req.status === 200) {
+            observer.onNext(req.response)
+            observer.onCompleted()
+          } else {
+            observer.onError(new Error(req.statusText))
+          }
+        }
+        req.onerror = () => {
+          observer.onError(new Error('Unknow Error'))
+        }
+        req.send()
+      })
     }
     componentDidMount () {
-      this._loadDataFromServer()
+      var tx = this._loadDataFromServer()
+      tx.subscribe(
+        function onNext (x) { console.log('Result: ' + x) },
+        function onError (err) { console.log('Error: ' + err) },
+        function onCompleted () { console.log('Completed') }
+      )
     }
     componentDidUpdate () {
-        console.log('Component Updated')
+      console.log('Component Updated')
     }
     _createHeader () {
       return this.props.metadata.map((item) => {
@@ -56,7 +79,8 @@ export default class DataTableSAR extends Component {
 DataTableSAR.propTypes = {
   metadata: React.PropTypes.array.isRequired,
   tbClass: React.PropTypes.string,
-  tbdClass: React.PropTypes.string
+  tbdClass: React.PropTypes.string,
+  url: React.PropTypes.string
 }
 
 DataTableSAR.defaultProps = {
