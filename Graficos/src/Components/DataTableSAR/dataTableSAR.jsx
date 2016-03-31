@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import _ from 'lodash'
 import ItemHeader from './itemHeader.jsx'
 import ItemRow from './itemRow.jsx'
-import Rx from 'rx'
+// import Rx from 'rx'
 
 export default class DataTableSAR extends Component {
     constructor (props) {
@@ -14,13 +14,13 @@ export default class DataTableSAR extends Component {
       this._loadDataFromServer = this._loadDataFromServer.bind(this)
     }
     _loadDataFromServer () {
-        /* (async () => {
+        (async () => {
             var data = await fetch(this.props.url)
             var dataParsed = await data.json()
             // console.log('d', dataParsed)
             this.setState({data: dataParsed.data})
-        })()*/
-      return Rx.observable.create((observer) => {
+        })()
+      /* return Rx.observable.create((observer) => {
         var req = new XMLHttpRequest()
         req.open('GET', this.props.url)
 
@@ -36,15 +36,15 @@ export default class DataTableSAR extends Component {
           observer.onError(new Error('Unknow Error'))
         }
         req.send()
-      })
+      })*/
     }
     componentDidMount () {
-      var tx = this._loadDataFromServer()
-      tx.subscribe(
+      this._loadDataFromServer()
+      /* tx.subscribe(
         function onNext (x) { console.log('Result: ' + x) },
         function onError (err) { console.log('Error: ' + err) },
         function onCompleted () { console.log('Completed') }
-      )
+      )*/
     }
     componentDidUpdate () {
       console.log('Component Updated')
@@ -62,6 +62,10 @@ export default class DataTableSAR extends Component {
     }
     render () {
       let headers = this._createHeader()
+      let rows = []
+      if (_.size(this.state) !== 0) {
+          rows = this._createRows()
+      }
       return (
           <table className={this.props.tbClass}>
             <thead>
@@ -70,6 +74,7 @@ export default class DataTableSAR extends Component {
                 </tr>
             </thead>
             <tbody className={this.props.tbdClass}>
+                {rows}
             </tbody>
           </table>
       )
