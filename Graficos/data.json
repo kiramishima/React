@@ -21,6 +21,28 @@
             ],
             "C1": "Campo prueba",
             "C2": "Campo Prueba 2"
+        },
+        {
+            "id": "X2",
+            "iDate": "Octubre 2016",
+            "dProcesos": [
+                "20",
+                "15"
+            ],
+            "dProductos": [
+                "20",
+                "15"
+            ],
+            "sCliente": [
+                "20",
+                "15"
+            ],
+            "dProveedor": [
+                "20",
+                "15"
+            ],
+            "C1": "Campo prueba",
+            "C2": "Campo Prueba 2"
         }
     ]
 }

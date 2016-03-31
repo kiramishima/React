@@ -11,11 +11,12 @@ export default class Item extends Component {
     }
     render () {
       return (
-        <td>{this.props.content}</td>
+        <td style={this.props.style}>{this.props.content}</td>
       )
     }
 }
 
-React.propTypes = {
-  content: React.PropTypes.string
+Item.propTypes = {
+  style: React.PropTypes.any,
+  content: React.PropTypes.string.isRequired
 }

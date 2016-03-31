@@ -3,6 +3,7 @@ require('babel-polyfill')
 import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash'
+import DataTableSAR from './Components/DataTableSAR/dataTableSAR.jsx'
 // require('d3')
 // import c3 from 'c3'
 
@@ -15,8 +16,9 @@ function onRender(val) {
     try {
       let data = await fetch('data.json')
       var parsedData = await data.json()
-      console.log('ES7 Async+fetch/data >>>', parsedData)
-      buildHeader(parsedData.data)
+      // console.log('ES7 Async+fetch/data >>>', parsedData)
+      // buildHeader(parsedData.data)
+      ReactDOM.render(<DataTableSAR key={"UUID-12"} url={'data.json'} metadata={metadata}/>, document.querySelector('.table-responsive'))
     } catch(error) {
         console.log(error)
     }
@@ -24,39 +26,29 @@ function onRender(val) {
 console.log(React, ReactDOM)
 
 var metadata = [
-    {data: "id", hidden: true, render: onRender},
-    {data: "iDate", hidden: false, render: onRender}
+    {data: "id", name: "data", label: "Id", hidden: true, render: onRender},
+    {data: "iDate", name: "iDate", label: "Fh. Registro", hidden: false, render: onRender}
 ]
 
 import Item from './Components/DataTableSAR/item.jsx'
+import ItemRow from './Components/DataTableSAR/itemRow.jsx'
 function buildHeader (data) {
-    var res = data.map((item) => {
+    // var items = []
+    data.forEach((item) => {
+        /* console.log(item)
         var keys = Object.keys(item)
-        var props = {styles: {}, content: ''}
         keys.forEach((key) => {
             var stack = _.find(metadata, { 'data': key })
-            console.log(key, stack, _.hasIn(stack, 'render'))
+            console.log(key, typeof stack, _.hasIn(stack, 'render'))
             
-            props.styles.display = _.hasIn(stack, 'hidden') ? '' : 'none'
-            props.content = _.hasIn(stack, 'render') ? stack.render(item[key]): onRender(item[key])
-            
-        })
-        return <Item {...props} />
-        /*var props = {}
-        props.style = {}
-        props.content = ":-P"
-        metadata.forEach((obj) => {
-            if (item.id === obj.data) {
-                if (obj.hidden) {
-                    props.style.display = 'none'
-                }
-                if (obj.hasOwnProperty('render')){
-                    props.content = obj.render()
-                }
+            if (typeof stack !== 'undefined'){
+                var props = {styles: {}, content: ''}
+                props.styles.display = _.hasIn(stack, 'hidden') ? '' : 'none'
+                props.content = _.hasIn(stack, 'render') ? stack.render(item[key]): onRender(item[key])
+                items.push(<Item {...props} />)
             }
-        })
-        return <Item {...props} />
-        // return '<tr></tr>';*/
+        })*/
+        ReactDOM.render(<ItemRow key={item.id} metadata={metadata} item={item}/>, document.querySelector('tbody'))
     })
-    console.log(res)
+    // console.log(items)
 }
