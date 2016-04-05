@@ -4,6 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash'
 import DataTableSAR from './Components/DataTableSAR/dataTableSAR.jsx'
+import Application from './Components/Application/App.jsx'
 // require('d3')
 // import c3 from 'c3'
 
@@ -19,6 +20,7 @@ function onRender(val) {
       // console.log('ES7 Async+fetch/data >>>', parsedData)
       // buildHeader(parsedData.data)
       ReactDOM.render(<DataTableSAR key={"UUID-12"} url={'data.json'} metadata={metadata}/>, document.querySelector('.table-responsive'))
+      ReactDOM.render(<Application key={"UUID-29"} Url={'data.json'} />, document.querySelector('#filterContent'))
     } catch(error) {
         console.log(error)
     }

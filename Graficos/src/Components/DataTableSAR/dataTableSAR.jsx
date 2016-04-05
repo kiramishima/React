@@ -52,13 +52,13 @@ export default class DataTableSAR extends Component {
     _createHeader () {
       return this.props.metadata.map((item) => {
         var style = {
-          display: _.hasIn(item, 'hidden') ? item.hidden : ''
+          display: _.hasIn(item, 'hidden') ? item.hidden ? 'none' : '' : ''
         }
         return <ItemHeader key={item.name} dataKey={item.data} label={item.label} style={style}/>
       })
     }
     _createRows () {
-      return this.state.data.map((item) => <ItemRow key={item.id} metadata={this.props.metadata} item={item}/>)
+      return this.state.data.map((item) => <ItemRow key={item.UUID} metadata={this.props.metadata} item={item}/>)
     }
     render () {
       let headers = this._createHeader()

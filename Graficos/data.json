@@ -1,8 +1,11 @@
 {
+    "draw": 1,
     "data": [
         {
+            "UUID": "89a7cd37-f109-4493-adf3-13e85a66ba8d",
+            "Project": "Demo 1",
             "id": "X1",
-            "iDate": "Octubre 2015",
+            "iDate": "1459872012897",
             "dProcesos": [
                 "20",
                 "15"
@@ -23,8 +26,34 @@
             "C2": "Campo Prueba 2"
         },
         {
+            "UUID": "a746115c-46cd-47da-ae90-3f16d50f81b5",
+            "Project": "Demo 2",
             "id": "X2",
-            "iDate": "Octubre 2016",
+            "iDate": "1459872012897",
+            "dProcesos": [
+                "20",
+                "15"
+            ],
+            "dProductos": [
+                "20",
+                "15"
+            ],
+            "sCliente": [
+                "20",
+                "15"
+            ],
+            "dProveedor": [
+                "20",
+                "15"
+            ],
+            "C1": "Campo prueba",
+            "C2": "Campo Prueba 2"
+        },
+        {
+            "UUID": "06bad80a-e0cb-434e-ae17-eeae6933d9dd",
+            "Project": "Demo 3",
+            "id": "X3",
+            "iDate": "1459872012897",
             "dProcesos": [
                 "20",
                 "15"
