@@ -1,14 +1,16 @@
 import React, {Component} from 'react'
+import reactMixin from 'react-mixin'
+import LinkedStateMixin from 'react-addons-linked-state-mixin'
 import _ from 'lodash'
 import ItemHeader from './itemHeader.jsx'
 import ItemRow from './itemRow.jsx'
 // import Rx from 'rx'
 
-export default class DataTableSAR extends Component {
+class DataTableSAR extends Component {
     constructor (props) {
       super(props)
       this.displayName = 'DTSAR'
-      this.state = {data: []}
+      this.state = {data: props.Data}
       this._createHeader = this._createHeader.bind(this)
       this._createRows = this._createRows.bind(this)
       this._loadDataFromServer = this._loadDataFromServer.bind(this)
@@ -39,18 +41,23 @@ export default class DataTableSAR extends Component {
       })*/
     }
     componentDidMount () {
-      this._loadDataFromServer()
+      // this._loadDataFromServer()
       /* tx.subscribe(
         function onNext (x) { console.log('Result: ' + x) },
         function onError (err) { console.log('Error: ' + err) },
         function onCompleted () { console.log('Completed') }
       )*/
     }
+    componentWillReceiveProps (nextProps) {
+        this.setState({
+            data: nextProps.Data.length > this.props.Data.length ? nextProps.Data : []
+        });
+    }
     componentDidUpdate () {
-      console.log('Component Updated')
+      // console.log('Component Updated')
     }
     _createHeader () {
-      return this.props.metadata.map((item) => {
+      return this.props.Metadata.map((item) => {
         var style = {
           display: _.hasIn(item, 'hidden') ? item.hidden ? 'none' : '' : ''
         }
@@ -58,14 +65,17 @@ export default class DataTableSAR extends Component {
       })
     }
     _createRows () {
-      return this.state.data.map((item) => <ItemRow key={item.UUID} metadata={this.props.metadata} item={item}/>)
+      return this.state.data.map((item) => <ItemRow key={item.UUID} metadata={this.props.Metadata} item={item}/>)
     }
     render () {
+      var linkData = this.linkState('data')
       let headers = this._createHeader()
       let rows = []
-      if (_.size(this.state) !== 0) {
+      if (_.size(this.state.data) !== 0) {
+          console.log('stateData', this.state.data)
           rows = this._createRows()
       }
+      console.log('linkData', linkData)
       return (
           <table className={this.props.tbClass}>
             <thead>
@@ -80,15 +90,19 @@ export default class DataTableSAR extends Component {
       )
     }
 }
+reactMixin(DataTableSAR.prototype, LinkedStateMixin)
 
 DataTableSAR.propTypes = {
-  metadata: React.PropTypes.array.isRequired,
+  Metadata: React.PropTypes.array.isRequired,
   tbClass: React.PropTypes.string,
   tbdClass: React.PropTypes.string,
-  url: React.PropTypes.string
+  Data: React.PropTypes.array
 }
 
 DataTableSAR.defaultProps = {
   tbClass: 'table table-bordered table-striped',
-  tbdClass: 'table-hover'
+  tbdClass: 'table-hover',
+  Data: []
 }
+
+export default DataTableSAR

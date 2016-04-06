@@ -16,7 +16,7 @@ export default class ItemRow extends Component {
       var items = []
       keys.forEach((key) => {
         var stack = _.find(this.props.metadata, { 'data': key })
-        console.log(key, typeof stack, _.hasIn(stack, 'render'))
+        // console.log(key, typeof stack, _.hasIn(stack, 'render'))
         if (typeof stack !== 'undefined') {
           var props = {styles: {}, content: ''}
           props.style = {'color': 'red'}
