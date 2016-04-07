@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
+import reactMixin from 'react-mixin'
+import LinkedStateMixin from 'react-addons-linked-state-mixin'
 import SearchBar from '../DataTableFilters/searchbar.jsx'
 import FilterItemList from '../DataTableFilters/FilterItemList.jsx'
 import DataTableSAR from '../DataTableSAR/dataTableSAR.jsx'
 
-export default class Application extends Component {
+class Application extends Component {
     constructor (props) {
       super(props)
-      this.state = { data: [], dtStart: '', dtEnd: '', selectedItems: []}
+      this.state = {data: [], dtStart: '', dtEnd: '', selectedItems: []}
       this.onSearch = this.onSearch.bind(this)
       this.changeHandler = this.changeHandler.bind(this)
       this._selectedData = this._selectedData.bind(this)
@@ -39,10 +41,15 @@ export default class Application extends Component {
         this.setState({dtStart: states.dtStart, dtEnd: states.dtEnd})
     }
     render () {
-      // this.onSearch()
-      var props = {
-          Metadata: this.props.Metadata,
-          Data: this.state.data
+      var dt
+      var linkData = this.linkState('selectedItems')
+      if (this.state.selectedItems.length !== 0) {
+        var props = {
+            Metadata: this.props.Metadata,
+            Data: linkData.value
+        }
+        console.log(linkData.value)
+        dt = <DataTableSAR key={"UUID-12"} {...props}/>
       }
       return (
           <div className={"DataTableApplication"}>
@@ -51,14 +58,17 @@ export default class Application extends Component {
                 <FilterItemList key={"UUID-15"} Items={this.state.data} onSelected={this._selectedData} /> 
             </div>
             <div>
-                <DataTableSAR key={"UUID-12"} {...props}/>
+                {dt}
             </div>
           </div>
       )
     }
 }
-// 
+reactMixin(Application.prototype, LinkedStateMixin)
+
 Application.propTypes = {
   Metadata: React.PropTypes.array.isRequired,
   Url: React.PropTypes.string.isRequired
 }
+
+export default Application

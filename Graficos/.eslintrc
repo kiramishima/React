@@ -6,6 +6,8 @@
     },
 
     "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "restParams": true,
         "arrowFunctions": true,
         "binaryLiterals": true,
         "blockBindings": true,
@@ -27,6 +29,22 @@
         "templateStrings": true,
         "unicodeCodePointEscapes": true,
         "globalReturn": true,
-        "jsx": true
-    }
+        "jsx": true,
+        "globalReturn ": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+        "strict": 0,
+        "new-cap": 1,
+        "babel/generator-star-spacing": 1,
+        "babel/new-cap": 1,
+        "babel/array-bracket-spacing": 1,
+        "babel/object-curly-spacing": 1,
+        "babel/object-shorthand": 1,
+        "babel/arrow-parens": 1,
+        "babel/no-await-in-loop": 1
+    },
+    "plugins": [
+        "babel"
+    ]
 }
