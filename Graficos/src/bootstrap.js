@@ -20,8 +20,10 @@ function onRender(val) {
       // buildHeader(parsedData.data)
       // ReactDOM.render(<DataTableSAR key={"UUID-12"} url={'data.json'} metadata={metadata}/>, document.querySelector('.table-responsive'))
       var metadata = [
-            {data: "id", name: "data", label: "Id", hidden: true, render: onRender},
-            {data: "iDate", name: "iDate", label: "Fh. Registro", hidden: false, render: onRender}
+            {data: "UUID", name: "UUID", label: "Id", hidden: false},
+            {data: "iDate", name: "iDate", label: "Fh. Registro", hidden: false, render: onRender},
+            {data: "dProcesos", name: "dProcesos", label: "Desempeño de procesos", hidden: false, type: "children"},
+            {data: "dProductos", name: "dProductos", label: "Desempeño del producto", hidden: false, type: "children"}
       ]
       ReactDOM.render(<Application key={"UUID-29"} Url={'data.json'} Metadata={metadata} />, document.querySelector('#filterContent'))
     } catch(error) {

@@ -65,7 +65,7 @@ class DataTableSAR extends Component {
       })
     }
     _createRows () {
-      return this.state.data.map((item) => <ItemRow key={item.UUID} metadata={this.props.Metadata} item={item}/>)
+      return this.state.data.map((item) => <ItemRow key={item.UUID} Metadata={this.props.Metadata} Item={item}/>)
     }
     render () {
       var linkData = this.linkState('data')

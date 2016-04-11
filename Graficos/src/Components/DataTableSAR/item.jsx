@@ -18,5 +18,5 @@ export default class Item extends Component {
 
 Item.propTypes = {
   style: React.PropTypes.any,
-  content: React.PropTypes.string.isRequired
+  content: React.PropTypes.any.isRequired
 }

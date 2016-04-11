@@ -1,28 +1,36 @@
 import React, {Component} from 'react'
 import _ from 'lodash'
 import Item from './item.jsx'
+import DotsD3 from '../DotsD3/index.jsx'
 
 export default class ItemRow extends Component {
     constructor (props) {
       super(props)
-      this.state = { childs: [] }
+      this.state = {childs: []}
       this._createChildrensItem = this._createChildrensItem.bind(this)
     }
     componentWillMount () {
       this._createChildrensItem()
     }
     _createChildrensItem () {
-      var keys = Object.keys(this.props.item)
+      var keys = Object.keys(this.props.Item)
+      console.log('keys', keys)
       var items = []
       keys.forEach((key) => {
-        var stack = _.find(this.props.metadata, { 'data': key })
-        // console.log(key, typeof stack, _.hasIn(stack, 'render'))
+        var stack = _.find(this.props.Metadata, {'data': key})
+        console.log(key, typeof stack)
         if (typeof stack !== 'undefined') {
           var props = {styles: {}, content: ''}
           props.style = {'color': 'red'}
           // props.style.display = _.hasIn(stack, 'hidden') ? '' : 'none'
-          props.content = _.hasIn(stack, 'render') ? stack.render(this.props.item[key]) : this.props.item
-          items.push(<Item key={this.props.item.id + ' ' + key} {...props} />)
+          if (_.hasIn(stack, 'type')) {
+            var dataset = this.props.Item[key]
+            console.log('dataset', dataset)
+            // props.content = <DotsD3 Data={dataset}/>
+          } else {
+            props.content = _.hasIn(stack, 'render') ? stack.render(this.props.Item[key]) : this.props.Item
+          }
+          items.push(<Item key={this.props.Item.UUID + ' ' + key} {...props} />)
         }
       })
       this.setState({childs: items})
@@ -35,8 +43,8 @@ export default class ItemRow extends Component {
 }
 
 ItemRow.propTypes = {
-  metadata: React.PropTypes.array.isRequired,
-  item: React.PropTypes.object.isRequired
+  Metadata: React.PropTypes.array.isRequired,
+  Item: React.PropTypes.object.isRequired
 }
 
 /* ItemRow.defaultProps = {

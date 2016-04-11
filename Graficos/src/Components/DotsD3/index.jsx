@@ -1,35 +1,45 @@
 import React from 'react'
 import d3 from 'd3'
-
-var json = {
-  'dtResultados': [],
-  'dtLinear': [],
-  'dtSVG': []
-}
+import SVGDots from './Dots/index.jsx'
 
 class DotsD3 extends React.Component {
   constructor (props) {
     super(props)
     this.state = {data: {}}
+    console.log(props)
   }
   componentDidMount () {
-    this.setState({data: json})
-    this._svg = d3.select("svg")
-    .attr("width", diameter)
-    .attr("height", diameter)
-    .append("g")
-    .attr("transform", "translate(" + this.props.Diameter / 2 + "," + this.props.Diameter / 2 + ")")
+    this.svg = new SVGDots({
+      target: this.refs.rowSVG,
+      data: this.props.Data,
+      margin: this.props.Margin,
+      diameter: this.props.Diameter,
+      format: this.props.Format
+    })
   }
   render () {
     return (
       <div className={"DotsD3_Container"}>
-         <svg>
+         <svg ref='rowSVG' >
          </svg>
       </div>
     )
   }
 }
 
-DotsD3.propTypes = {}
+DotsD3.propTypes = {
+  Data: React.PropTypes.any,
+  Margin: React.PropTypes.number,
+  Diameter: React.PropTypes.number,
+  Format: React.PropTypes.any,
+  Color: React.PropTypes.any
+}
+
+DotsD3.defaultProps = {
+  Margin: 20,
+  Diameter: 70,
+  Format: d3.format(',d'),
+  Data: {}
+}
 
 export default DotsD3

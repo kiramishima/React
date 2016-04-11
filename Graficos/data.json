@@ -4,24 +4,99 @@
         {
             "UUID": "89a7cd37-f109-4493-adf3-13e85a66ba8d",
             "Project": "Demo 1",
-            "id": "X1",
             "iDate": "1459872012897",
-            "dProcesos": [
-                "20",
-                "15"
-            ],
-            "dProductos": [
-                "20",
-                "15"
-            ],
-            "sCliente": [
-                "20",
-                "15"
-            ],
-            "dProveedor": [
-                "20",
-                "15"
-            ],
+            "dProcesos": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dProductos": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "sCliente": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dProveedor": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
             "C1": "Campo prueba",
             "C2": "Campo Prueba 2"
         },
@@ -30,22 +105,98 @@
             "Project": "Demo 2",
             "id": "X2",
             "iDate": "1459872012897",
-            "dProcesos": [
-                "20",
-                "15"
-            ],
-            "dProductos": [
-                "20",
-                "15"
-            ],
-            "sCliente": [
-                "20",
-                "15"
-            ],
-            "dProveedor": [
-                "20",
-                "15"
-            ],
+            "dProcesos": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dProductos": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "sCliente": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dProveedor": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
             "C1": "Campo prueba",
             "C2": "Campo Prueba 2"
         },
@@ -54,22 +205,98 @@
             "Project": "Demo 3",
             "id": "X3",
             "iDate": "1459872012897",
-            "dProcesos": [
-                "20",
-                "15"
-            ],
-            "dProductos": [
-                "20",
-                "15"
-            ],
-            "sCliente": [
-                "20",
-                "15"
-            ],
-            "dProveedor": [
-                "20",
-                "15"
-            ],
+            "dProcesos": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dProductos": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "sCliente": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dProveedor": {
+                "children": [
+                    {
+                        "name": "Analitycs",
+                        "children": [
+                            {
+                                "name": "Clusters",
+                                "children": [
+                                    {"name": "Processors", "total": 3954},
+                                    {"name": "Memory", "total": 5969}
+                                ]
+                            },
+                            {
+                                "name": "Langs",
+                                "children": [
+                                    {"name": "Elixir", "total": 7840},
+                                    {"name": "Go", "total": 5914}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
             "C1": "Campo prueba",
             "C2": "Campo Prueba 2"
         }
