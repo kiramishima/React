@@ -23,7 +23,8 @@ function onRender(val) {
             {data: "UUID", name: "UUID", label: "Id", hidden: false},
             {data: "iDate", name: "iDate", label: "Fh. Registro", hidden: false, render: onRender},
             {data: "dProcesos", name: "dProcesos", label: "Desempeño de procesos", hidden: false, type: "children"},
-            {data: "dProductos", name: "dProductos", label: "Desempeño del producto", hidden: false, type: "children"}
+            {data: "dProductos", name: "dProductos", label: "Desempeño del producto", hidden: false, type: "children"},
+            {data: "dProveedor", name: "dProveedor", label: "Desempeño del proveedor", hidden: false, type: "children"}
       ]
       ReactDOM.render(<Application key={"UUID-29"} Url={'data.json'} Metadata={metadata} />, document.querySelector('#filterContent'))
     } catch(error) {

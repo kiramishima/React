@@ -3,7 +3,8 @@ import reactMixin from 'react-mixin'
 import LinkedStateMixin from 'react-addons-linked-state-mixin'
 import _ from 'lodash'
 import ItemHeader from './itemHeader.jsx'
-import ItemRow from './itemRow.jsx'
+import DataTableBody from './datatablebody.jsx'
+// import ItemRow from './itemRow.jsx'
 // import Rx from 'rx'
 
 class DataTableSAR extends Component {
@@ -12,7 +13,7 @@ class DataTableSAR extends Component {
       this.displayName = 'DTSAR'
       this.state = {data: props.Data}
       this._createHeader = this._createHeader.bind(this)
-      this._createRows = this._createRows.bind(this)
+      // this._createRows = this._createRows.bind(this)
       this._loadDataFromServer = this._loadDataFromServer.bind(this)
     }
     _loadDataFromServer () {
@@ -48,11 +49,11 @@ class DataTableSAR extends Component {
         function onCompleted () { console.log('Completed') }
       )*/
     }
-    componentWillReceiveProps (nextProps) {
+    /* componentWillReceiveProps (nextProps) {
         this.setState({
             data: nextProps.Data.length > this.props.Data.length ? nextProps.Data : []
         });
-    }
+    } */
     componentDidUpdate () {
       // console.log('Component Updated')
     }
@@ -64,17 +65,17 @@ class DataTableSAR extends Component {
         return <ItemHeader key={item.name} dataKey={item.data} label={item.label} style={style}/>
       })
     }
-    _createRows () {
+    /* _createRows () {
       return this.state.data.map((item) => <ItemRow key={item.UUID} Metadata={this.props.Metadata} Item={item}/>)
-    }
+    } */
     render () {
       var linkData = this.linkState('data')
       let headers = this._createHeader()
-      let rows = []
+      /* let rows = []
       if (_.size(this.state.data) !== 0) {
           console.log('stateData', this.state.data)
           rows = this._createRows()
-      }
+      } */
       console.log('linkData', linkData)
       return (
           <table className={this.props.tbClass}>
@@ -83,9 +84,7 @@ class DataTableSAR extends Component {
                    {headers}
                 </tr>
             </thead>
-            <tbody className={this.props.tbdClass}>
-                {rows}
-            </tbody>
+            <DataTableBody key='UUID-10' Data={linkData.value} Metadata={this.props.Metadata}/>
           </table>
       )
     }
