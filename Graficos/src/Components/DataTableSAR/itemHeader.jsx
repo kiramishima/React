@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import _ from 'lodash'
 
 export default class ItemHeader extends Component {
     constructor (props) {
@@ -7,13 +6,13 @@ export default class ItemHeader extends Component {
     }
     render () {
       return (
-          <th>{this.props.label}</th>
+          <th style={this.props.Style}>{this.props.Label}</th>
       )
     }
 }
 
 ItemHeader.propTypes = {
-  dataKey: React.PropTypes.string.isRequired,
-  label: React.PropTypes.string.isRequired,
-  style: React.PropTypes.object
+  DataKey: React.PropTypes.string.isRequired,
+  Label: React.PropTypes.string.isRequired,
+  Style: React.PropTypes.object
 }

@@ -9,6 +9,18 @@ export default class SearchBar extends Component {
       this.state = {inputs: null, dtStart: null, dtEnd: null}
       this.changeHandler = this.changeHandler.bind(this)
       this.onClickBtnSearch = this.onClickBtnSearch.bind(this)
+      this.showDtEndWidget = this.showDtEndWidget.bind(this)
+      this.showDtStartWidget = this.showDtStartWidget.bind(this)
+    }
+    showDtStartWidget () {
+      if (!this._dtStart.isVisible()) {
+        this._dtStart.show()
+      }
+    }
+    showDtEndWidget () {
+      if (!this._dtEnd.isVisible()) {
+        this._dtEnd.show()
+      }
     }
     componentDidMount () {
       this._dtStart = new Pikaday({
@@ -19,6 +31,9 @@ export default class SearchBar extends Component {
         field: document.getElementById('datepicker2'),
         format: 'DD/MM/YYYY'
       })
+      var dt = moment().add(7, 'days').format('MM/DD/YYYY')
+      this._dtStart.setDate(moment().format('MM/DD/YYYY'))
+      this._dtEnd.setDate(dt)
     }
     componentDidUpdate () {
       // :-D
@@ -61,31 +76,31 @@ export default class SearchBar extends Component {
         'display': 'flex'
       }
       return (
-          <div className={"searchBarContainer"} >
+          <div className='searchBarContainer' >
             <ul style={styles}>
                 <li>
-                <div className={"input-group input-group-sm"}>
-                    <input id='datepicker' name='dtStart' onBlur={this.changeHandler} type='text' className={"form-control"} placeholder='DD/MM/YYYY' />
-                    <span className={"input-group-btn"}>
-                        <button className={"btn btn-default"} type='button' onClick={this.onClickBtn} >
-                           <span className={"glyphicon glyphicon glyphicon-calendar"} aria-hidden='true'></span>
-                        </button>
-                    </span>
-                </div>
+                    <div className={"input-group input-group-sm"}>
+                        <input id='datepicker' name='dtStart' onBlur={this.changeHandler} type='text' className={"form-control"} placeholder='DD/MM/YYYY' />
+                        <span className={"input-group-btn"}>
+                            <button className={"btn btn-default"} type='button' onClick={this.showDtStartWidget} >
+                            <span className={"glyphicon glyphicon glyphicon-calendar"} aria-hidden='true'></span>
+                            </button>
+                        </span>
+                    </div>
                 </li>
                 <li>&nbsp;</li>
                 <li>
-                <div className={"input-group input-group-sm"}>
-                    <input id='datepicker2' name='dtEnd' onBlur={this.changeHandler} type='text' className={"form-control"} placeholder='DD/MM/YYYY' />
-                    <span className={"input-group-btn"}>
-                        <button className={"btn btn-default"} type='button'>
-                        <span className={"glyphicon glyphicon glyphicon-calendar"} aria-hidden='true'></span>
-                        </button>
-                    </span>
-                </div>
+                    <div className='input-group input-group-sm'>
+                        <input id='datepicker2' name='dtEnd' onBlur={this.changeHandler} type='text' className={"form-control"} placeholder='DD/MM/YYYY' />
+                        <span className='input-group-btn'>
+                            <button className='btn btn-default' type='button' onClick={this.showDtEndWidget}>
+                            <span className='glyphicon glyphicon glyphicon-calendar' aria-hidden='true'></span>
+                            </button>
+                        </span>
+                    </div>
                 </li>
             </ul>
-            <button type='button' onClick={this.onClickBtnSearch}>Buscar</button>
+            <button className='btn btn-default' type='button' onClick={this.onClickBtnSearch} style={{float: 'right'}}>Buscar</button>
           </div>
       )
     }

@@ -1,14 +1,16 @@
 import React, {Component} from 'react'
 import reactMixin from 'react-mixin'
 import LinkedStateMixin from 'react-addons-linked-state-mixin'
+import Loader from 'react-loader'
 import SearchBar from '../DataTableFilters/searchbar.jsx'
 import FilterItemList from '../DataTableFilters/FilterItemList.jsx'
 import DataTableSAR from '../DataTableSAR/dataTableSAR.jsx'
+import '../../sass/main.scss'
 
 class Application extends Component {
     constructor (props) {
       super(props)
-      this.state = {data: [], dtStart: '', dtEnd: '', selectedItems: []}
+      this.state = {loaded: true, data: [], dtStart: '', dtEnd: '', selectedItems: []}
       this.onSearch = this.onSearch.bind(this)
       this.changeHandler = this.changeHandler.bind(this)
       this._selectedData = this._selectedData.bind(this)
@@ -25,7 +27,7 @@ class Application extends Component {
               body: JSON.stringify({dtStart: dtStart, dtEnd: dtEnd}) */
           })
           var data = await req.json()
-          this.setState({data: data.data})
+          this.setState({data: data.data, loaded: true})
       })()
     }
     _selectedData (selectedItems) {
@@ -33,7 +35,7 @@ class Application extends Component {
       this.setState({selectedItems: selectedItems})
     }
     onSearch () {
-      // console.log(this.state)
+      this.setState({loaded: false})
       this._getData()
     }
     changeHandler (states) {
@@ -48,17 +50,25 @@ class Application extends Component {
             Metadata: this.props.Metadata,
             Data: linkData.value
         }
-        console.log(linkData.value)
         dt = <DataTableSAR key={"UUID-12"} {...props}/>
       }
+      
       return (
-          <div className={"DataTableApplication"}>
-            <div className={"DataTableContainerLayout"}>
-                <SearchBar key={"UUID-22"} onChange={this.changeHandler} onSearch={this.onSearch}/>
-                <FilterItemList key={"UUID-15"} Items={this.state.data} onSelected={this._selectedData} /> 
+          <div className="row">
+            <div className="col-md-4 col-sm-3">
+                <div className={"DataTableApplication"}>
+                    <div className={"DataTableContainerLayout"}>
+                        <SearchBar key={"UUID-22"} onChange={this.changeHandler} onSearch={this.onSearch}/>
+                        <FilterItemList key={"UUID-15"} Items={this.state.data} onSelected={this._selectedData} /> 
+                    </div>
+                </div>
             </div>
-            <div>
-                {dt}
+            <div className="col-md-8 col-sm-9">
+                <div className="table-responsive">
+                    <Loader loaded={this.state.loaded}>
+                      {dt}
+                    </Loader>
+                </div>
             </div>
           </div>
       )

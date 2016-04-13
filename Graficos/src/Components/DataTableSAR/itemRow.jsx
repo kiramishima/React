@@ -14,14 +14,16 @@ export default class ItemRow extends Component {
     }
     _createChildrensItem () {
       var keys = Object.keys(this.props.Item)
-      console.log('keys', keys)
       var items = []
       keys.forEach((key) => {
         var stack = _.find(this.props.Metadata, {'data': key})
-        console.log(key, typeof stack)
         if (typeof stack !== 'undefined') {
           var props = {styles: {}, content: ''}
-          props.style = {'color': 'red'}
+          var style = {
+            display: _.hasIn(stack, 'hidden') ? stack.hidden ? 'none' : '' : ''
+          }
+          props.style = style // {'color': 'red'}
+
           // props.style.display = _.hasIn(stack, 'hidden') ? '' : 'none'
           if (_.hasIn(stack, 'type')) {
             var dataset = this.props.Item[key]

@@ -18,6 +18,11 @@ var config = {
         query: {
           presets: ['react', 'es2015', 'stage-3']
         }
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass'],
+        include: path.join(__dirname, 'src', 'sass')
       }
     ]
   }

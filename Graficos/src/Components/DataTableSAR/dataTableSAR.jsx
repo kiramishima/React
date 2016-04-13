@@ -62,7 +62,7 @@ class DataTableSAR extends Component {
         var style = {
           display: _.hasIn(item, 'hidden') ? item.hidden ? 'none' : '' : ''
         }
-        return <ItemHeader key={item.name} dataKey={item.data} label={item.label} style={style}/>
+        return <ItemHeader key={item.name} DataKey={item.data} Label={item.label} Style={style}/>
       })
     }
     /* _createRows () {

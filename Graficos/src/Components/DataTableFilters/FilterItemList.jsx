@@ -24,7 +24,9 @@ export default class FilterItemList extends Component {
     }
     render () {
       var styles = {
-        'listStyle': 'none'
+        listStyle: 'none',
+        display: 'block',
+        clear: 'both'
       }
       var rows = []
       this.props.Items.forEach((item) => {

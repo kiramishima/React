@@ -14,8 +14,11 @@ export default class FilterItemRow extends Component {
     render () {
       return (
           <li>
-            <input onClick={this.onClick} type='checkbox' id={this.props.UUID} />
-            {this.props.Label}
+            <div className='checkbox'>
+                <label>
+                   <input type='checkbox' onClick={this.onClick} id={this.props.UUID}/> {this.props.Label}
+                </label>
+            </div>
           </li>
       )
     }
