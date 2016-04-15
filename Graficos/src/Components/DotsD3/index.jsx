@@ -1,16 +1,16 @@
-import React from 'react'
+import React, {Component, PropTypes} from 'react'
 import d3 from 'd3'
 import SVGDots from './Dots/index.jsx'
 
-class DotsD3 extends React.Component {
+class DotsD3 extends Component {
   constructor (props) {
     super(props)
     this.state = {data: {}}
-    console.log(props)
   }
   componentDidMount () {
     this.svg = new SVGDots({
       target: this.refs.rowSVG,
+      key: this.props.Property,
       data: this.props.Data,
       margin: this.props.Margin,
       diameter: this.props.Diameter,
@@ -32,7 +32,8 @@ DotsD3.propTypes = {
   Margin: React.PropTypes.number,
   Diameter: React.PropTypes.number,
   Format: React.PropTypes.any,
-  Color: React.PropTypes.any
+  Color: React.PropTypes.any,
+  Property: PropTypes.any
 }
 
 DotsD3.defaultProps = {

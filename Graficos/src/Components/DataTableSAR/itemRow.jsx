@@ -27,7 +27,7 @@ export default class ItemRow extends Component {
           // props.style.display = _.hasIn(stack, 'hidden') ? '' : 'none'
           if (_.hasIn(stack, 'type')) {
             var dataset = this.props.Item[key]
-            props.content = <DotsD3 key={'SVG_' + this.props.Item.UUID} Data={dataset}/>
+            props.content = <DotsD3 key={'SVG_' + this.props.Item.UUID} Data={dataset} Property={key}/>
           } else {
             props.content = _.hasIn(stack, 'render') ? stack.render(this.props.Item[key]) : this.props.Item[key]
           }

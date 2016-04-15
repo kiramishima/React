@@ -42,8 +42,13 @@ class SVGDots {
       .data(nodes)
       .enter().append('circle')
         .attr('class', function (d) { return d.parent ? d.children ? 'node' : 'node node--leaf' : 'node node--root' })
-        .style('fill', function (d) { return d.children ? color(d.depth) : null })
-        .on('click', function (d) { if (focus !== d) zoom(d); d3.event.stopPropagation() })
+        .style('fill', function (d) { console.log('svg.circle.style', d); return d.children ? color(d.depth) : null })
+        .on('click', function (d) {
+          ((data) => {
+            console.log('data', data)
+          })(this.data)
+          if (focus !== d) zoom(d); d3.event.stopPropagation()
+        })
 
     var text = this.chart.selectAll('text')
       .data(nodes)
@@ -83,6 +88,22 @@ class SVGDots {
     var k = this.diameter / v[2]; this.view = v
     this.node.attr('transform', function (d) { return 'translate(' + (d.x - v[0]) * k + ',' + (d.y - v[1]) * k + ')' })
     this.circle.attr('r', function (d) { return d.r * k })
+  }
+
+  showGraph () {
+    var diameter = 450
+    var format = d3.format(',d')
+    var color = d3.scale.category20c()
+
+    var bubble = d3.layout.pack()
+    .sort(null)
+    .size([diameter, diameter])
+    .padding(1.5)
+
+    var svg = d3.select(document.querySelector('#svgContainer'))
+    .attr('width', diameter)
+    .attr('height', diameter)
+    .attr('class', 'bubble')
   }
 }
 
