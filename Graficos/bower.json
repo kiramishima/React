@@ -1,0 +1,23 @@
+{
+  "name": "Graficos",
+  "version": "1.0.0",
+  "homepage": "https://github.com/kiramishima/React",
+  "authors": [
+    "Paul Arizpe Colorado <kiramishima@outlook.com>"
+  ],
+  "description": "Graficos",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "c3": "~0.4.10"
+  }
+}
