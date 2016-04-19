@@ -6,21 +6,23 @@ class ItemStatus extends Component {
   }
   _getItems () {
     var items = this.props.Data.map((item) => {
+      var el = null
       switch (item.dato) {
         case item.data < 30:
-          <div style='width: 30%;background: green;'>&nbsp;</div>
+          el = <div style='width: 30%;background: green;'>&nbsp;</div>
           break
 
         case item.data > 30 && item.data < 60:
-          <div style='background: red; width: 20%;'>&nbsp;</div>
+          el = <div style='background: red; width: 20%;'>&nbsp;</div>
           break
 
         case item.data > 60 && item.data < 100:
-          <div style='background: yellow; width: 50%;'>&nbsp;</div>
+          el = <div style='background: yellow; width: 50%;'>&nbsp;</div>
           break
         default:
           break
       }
+      return el
     })
     return items
   }

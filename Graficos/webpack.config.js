@@ -1,4 +1,5 @@
 var path = require('path')
+var webpack = require('webpack')
 var config = {
   entry: {
     // boot: path.join(__dirname, 'src'),
@@ -25,7 +26,12 @@ var config = {
         include: path.join(__dirname, 'src', 'sass')
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    })
+  ]
 }
 
 module.exports = config
