@@ -7,9 +7,9 @@
             "indicador_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id quo quam dolorum, necessitatibus laudantium, et temporibus nihil facere officiis labore fugit quisquam ipsa, repellat amet. Vitae harum soluta ab.",
             "activities": [{
                 "year": 2015,
-                "status_g": "<= 40 min",
-                "status_y": ["=> 41 min", "<= 50 min"],
-                "status_r": "=> 51 min",
+                "status_success": "<= 40 min",
+                "status_warning": ["=> 41 min", "<= 50 min"],
+                "status_error": "=> 51 min",
                 "months": [
                     {"month": "Octubre", "time": "45"},
                     {"month": "Noviembre", "time": "38"},

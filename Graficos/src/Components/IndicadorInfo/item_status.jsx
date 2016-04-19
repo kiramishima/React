@@ -4,8 +4,11 @@ class ItemStatus extends Component {
   constructor (props) {
     super(props)
   }
-  _getItems () {
-    var items = this.props.Data.map((item) => {
+  _getItemStatus () {
+    var {status_success: sucess, status_warning: warning, status_alert: alert} = this.props.Data
+    var perc = 0
+    var types = [typeof sucess, typeof warning, typeof alert]
+    var items = types.map((item) => {
       var el = null
       switch (item.dato) {
         case item.data < 30:
