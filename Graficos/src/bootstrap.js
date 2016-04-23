@@ -6,6 +6,7 @@ import _ from 'lodash'
 import Application from './Components/Application/App.jsx'
 import d3 from 'd3'
 import moment from 'moment'
+import IndicadorItem from './Components/IndicadorInfo/indicador_item.jsx'
 
 function onRender(val) {
     
@@ -31,6 +32,11 @@ function onRender(val) {
             {data: "dProveedor", name: "dProveedor", label: "Desempeño del proveedor", hidden: false, type: "children"}
       ]
       ReactDOM.render(<Application key={"UUID-29"} Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
+      
+      let http = await fetch('indicador.json')
+      var mockData = await http.json()
+      
+      ReactDOM.render(<IndicadorItem key={"UUID-78"} ItemData={mockData.indicadores[0]} />, document.querySelector('#pruebas'))
     } catch(error) {
         console.log(error)
     }

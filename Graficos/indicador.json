@@ -17,6 +17,22 @@
                 ]
                 }
             ]
+        },
+        {
+            "indicador": "Desempeño del proceso 2",
+            "indicador_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id quo quam dolorum, necessitatibus laudantium, et temporibus nihil facere officiis labore fugit quisquam ipsa, repellat amet. Vitae harum soluta ab.",
+            "activities": [{
+                "year": 2016,
+                "status_success": ["=> 41 min", "<= 50 min"],
+                "status_warning": ["=> 51 min", "<= 60 min"],
+                "status_error": "=> 61 min",
+                "months": [
+                    {"month": "Septiembre", "time": "45"},
+                    {"month": "Octubre", "time": "38"},
+                    {"month": "Noviembre", "time": "25"}
+                ]
+                }
+            ]
         }
     ]
 }
