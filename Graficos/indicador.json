@@ -11,9 +11,9 @@
                 "status_warning": ["=> 41 min", "<= 50 min"],
                 "status_error": "=> 51 min",
                 "months": [
-                    {"month": "Octubre", "time": "45"},
-                    {"month": "Noviembre", "time": "38"},
-                    {"month": "Diciembre", "time": "25"}
+                    {"month": "Octubre", "time": "45", "status": "warning"},
+                    {"month": "Noviembre", "time": "38", "status": "success"},
+                    {"month": "Diciembre", "time": "25", "status": "success"}
                 ]
                 }
             ]
@@ -27,9 +27,9 @@
                 "status_warning": ["=> 51 min", "<= 60 min"],
                 "status_error": "=> 61 min",
                 "months": [
-                    {"month": "Septiembre", "time": "45"},
-                    {"month": "Octubre", "time": "38"},
-                    {"month": "Noviembre", "time": "25"}
+                    {"month": "Septiembre", "time": "45", "status": "success"},
+                    {"month": "Octubre", "time": "63", "status": "error"},
+                    {"month": "Noviembre", "time": "55", "status": "warning"}
                 ]
                 }
             ]

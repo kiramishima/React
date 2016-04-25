@@ -1,1 +1,23 @@
-@import "./DotsD3_Container.scss"
+@import "./DotsD3_Container.scss";
+
+.success_circle {
+    fill: green
+}
+.error_circle {
+    fill: red
+}
+.warning_circle {
+    fill: yellow
+}
+.success_circle:hover {
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+.error_circle:hover {
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+.warning_circle:hover {
+    stroke: #000;
+    stroke-width: 1.5px;
+}

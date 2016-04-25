@@ -76,7 +76,7 @@ class DataTableSAR extends Component {
           console.log('stateData', this.state.data)
           rows = this._createRows()
       } */
-      console.log('linkData', linkData)
+      // console.log('linkData', linkData)
       return (
           <table className={this.props.tbClass}>
             <thead>

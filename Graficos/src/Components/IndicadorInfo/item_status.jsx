@@ -16,15 +16,15 @@ ItemBar.propTypes = {
 class ItemStatus extends Component {
   constructor (props) {
     super(props)
-    console.log(props)
+    // console.log(props)
     this._getItemStatus = this._getItemStatus.bind(this)
   }
   _getItemStatus () {
     var {status_success: success, status_warning: warning, status_error: alerta} = this.props.Data
     var types = [{value: success, type: typeof success, color: 'green'}, {value: warning, type: typeof warning, color: 'yellow'}, {value: alerta, type: typeof alerta, color: 'red'}]
-    console.log(types)
+    // console.log(types)
     var items = types.map((item, indx) => {
-      console.log(item)
+      // console.log(item)
       var el = null
       var perc = 33.333333333333336
       switch (item.type) {

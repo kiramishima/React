@@ -1,0 +1,22 @@
+import React, {Component, PropTypes} from 'react'
+
+class Header extends Component {
+  constructor (props) {
+    super(props)
+  }
+  render () {
+    return (
+        <theader>
+           {
+               this.props.DataDefinition.map((item) => <th style={{display: item.hidden ? 'none' : ''}}>{item.label}</th>)
+           }
+        </theader>
+    )
+  }
+}
+
+Header.propTypes = {
+  DataDefinition: PropTypes.array.isRequired
+}
+
+export default Header
