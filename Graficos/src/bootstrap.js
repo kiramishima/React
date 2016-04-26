@@ -7,6 +7,7 @@ import Application from './Components/Application/App.jsx'
 import d3 from 'd3'
 import moment from 'moment'
 import IndicadorInfo from './Components/IndicadorInfo/index.jsx'
+import TendenciasIndicador from './Components/TendenciasIndicador/index.jsx'
 
 function onRender(val) {
     
@@ -31,21 +32,23 @@ function onRender(val) {
             {data: "sCliente", name: "sCliente", label: " Satisfacion del cliente", hidden: false, type: "children"},
             {data: "dProveedor", name: "dProveedor", label: "Desempeño del proveedor", hidden: false, type: "children"}
       ]
-      ReactDOM.render(<Application key={"UUID-29"} Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
+      // ReactDOM.render(<Application key={"UUID-29"} Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
       
       // let http = await fetch('indicador.json')
       // var mockData = await http.json()
       
       // ReactDOM.render(<IndicadorInfo key={"UUID-78"} Data={mockData.indicadores} />, document.querySelector('#pruebas'))
-      var metadata = [
-            {data: "UUID", name: "UUID", label: "Id", hidden: true},
-            {data: "Project", name: "Project", label: "Proyecto", hidden: false},
-            {data: "iDate", name: "iDate", label: "Fh. Registro", hidden: false, render: onRender},
-            {data: "dProcesos", name: "dProcesos", label: "Desempeño de procesos", hidden: false, type: "children"},
-            {data: "dProductos", name: "dProductos", label: "Desempeño del producto/servicio", hidden: false, type: "children"},
-            {data: "sCliente", name: "sCliente", label: " Satisfacion del cliente", hidden: false, type: "children"},
-            {data: "dProveedor", name: "dProveedor", label: "Desempeño del proveedor", hidden: false, type: "children"}
+      var DataDefinition = [
+            {data: "UUID", label: "Id", hidden: true},
+            {data: "service_name", label: "Servicio", hidden: false},
+            {data: "process_name", label: "Proceso", hidden: false},
+            {data: "ind_name", label: "Indicador", hidden: false},
+            {data: "value", label: "Valor", hidden: false},
+            {data: "status", label: "", hidden: false, type: "svg"}
       ]
+      let http2 = await fetch('tendencia.json')
+      var tendenciaMock = await http2.json()
+      ReactDOM.render(<TendenciasIndicador key={"UUID-79"} Data={tendenciaMock} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
     } catch(error) {
         console.log(error)
     }

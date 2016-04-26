@@ -1,0 +1,23 @@
+{
+    "status": "ok",
+    "year": 2016,
+    "month": 4,
+    "tendencias": [
+        {
+            "UUID": "21f1fc3a-992b-40d9-a242-0a204723c341",
+            "service_name": "Administración de la cuenta",
+            "process_name": "Registro de trabajadores",
+            "ind_name": "Desempeño del proceso",
+            "value": "60%",
+            "status": "Verde"
+        },
+        {
+            "UUID": "37c28d18-1062-4366-aa1b-56722f75ff18",
+            "service_name": "Administración de la cuenta",
+            "process_name": "Registro de trabajadores",
+            "ind_name": "Desempeño del proceso",
+            "value": "10%",
+            "status": "Rojo"
+        }
+    ]
+}

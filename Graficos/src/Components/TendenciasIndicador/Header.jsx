@@ -6,11 +6,13 @@ class Header extends Component {
   }
   render () {
     return (
-        <theader>
+        <thead>
+           <tr>
            {
-               this.props.DataDefinition.map((item) => <th style={{display: item.hidden ? 'none' : ''}}>{item.label}</th>)
+               this.props.DataDefinition.map((item) => <th key={item.label} style={{display: item.hidden ? 'none' : ''}}>{item.label}</th>)
            }
-        </theader>
+           </tr>
+        </thead>
     )
   }
 }

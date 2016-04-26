@@ -1,16 +1,49 @@
 import React, {Component, PropTypes} from 'react'
+import ItemSVG from '../IndicadorInfo/item_svg.jsx'
 
 class Item extends Component {
   constructor (props) {
     super(props)
     this.state = {}
+    this._getStyle = this._getStyle.bind(this)
   }
-  _getStyle () {}
+  _getStyle () {
+    var displayed = this.props.Hidden ? 'none' : ''
+    return {
+      display: displayed
+    }
+  }
+  componentDidMount () {
+    if (this.props.Type === 'SVG') {
+      this._svg = new ItemSVG({
+        target: this.refs.item_svg,
+        color: `status_${this.props.Text}`,
+        diameter: 30,
+        text: ''
+      })
+    }
+  }
   render () {
-    return (
-        <td></td>
-    )
+    if (this.props.Type === 'SVG') {
+      return (
+        <td><svg ref='item_svg'></svg></td>
+      )
+    } else {
+      return (
+          <td style={this._getStyle()}>{this.props.Text}</td>
+      )
+    }
   }
+}
+
+Item.propTypes = {
+  Text: PropTypes.string,
+  Hidden: PropTypes.any,
+  Type: PropTypes.string
+}
+
+Item.defaultProps = {
+  Type: 'Text'
 }
 
 class ItemRow extends Component {
@@ -20,14 +53,19 @@ class ItemRow extends Component {
   }
   _createElements () {
     return this.props.DataDefinition.map((item, index) => {
-      var curr = this.props.ItemData[index]
-      console.log('currItem', curr)
+      // console.log('index', item)
+      var text = this.props.ItemData[item.data]
+      if (item.type === 'svg') {
+        return <Item Text={text} Hidden={item.hidden} Type='SVG'/>
+      } else {
+        return <Item Text={text} Hidden={item.hidden}/>
+      }
     })
   }
   render () {
-    this._createElements()
     return (
         <tr>
+        {this._createElements()}
         </tr>
     )
   }

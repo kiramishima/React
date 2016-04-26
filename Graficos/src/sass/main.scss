@@ -1,9 +1,9 @@
 @import "./DotsD3_Container.scss";
 
-.success_circle {
+.success_circle, .status_Verde_circle {
     fill: green
 }
-.error_circle {
+.error_circle, .status_Rojo_circle {
     fill: red
 }
 .warning_circle {
