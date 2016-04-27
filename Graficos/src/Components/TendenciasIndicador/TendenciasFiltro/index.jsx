@@ -1,18 +1,21 @@
 import React, {Component, PropTypes} from 'react'
 import _ from 'lodash'
+import SearchForm from './searchform.jsx'
 
 class TendenciasFiltro extends Component {
   constructor (props) {
     super(props)
   }
   componentDidMount () {
-    var capturado = _.groupBy(this.props.TendenciasData, 'status')
-    console.log('capturado', capturado)
+    var capturados = Object.keys(_.groupBy(this.props.TendenciasData, 'status'))
+    // console.log('capturado', capturado)
+    this.setState({filtroCapturados: capturados})
   }
   render () {
     return (
         <div>
-        {}
+           <SearchForm />
+           <hr />
         </div>
     )
   }

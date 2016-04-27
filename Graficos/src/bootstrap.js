@@ -18,8 +18,8 @@ function onRender(val) {
 
 (async () => {
     try {
-      let data = await fetch('data.json')
-      var parsedData = await data.json()
+      // let data = await fetch('data.json')
+      // var parsedData = await data.json()
       // console.log('ES7 Async+fetch/data >>>', parsedData)
       // buildHeader(parsedData.data)
       // ReactDOM.render(<DataTableSAR key={"UUID-12"} url={'data.json'} metadata={metadata}/>, document.querySelector('#appContainer'))
