@@ -4,10 +4,10 @@ export default class SearchForm extends Component {
     constructor (props) {
       super(props)
       this.displayName = 'SearchFormComponent'
-      this.state = {inputs: null, dtStart: null, dtEnd: null}
+      this.state = {month: null, year: null}
       this.changeHandler = this.changeHandler.bind(this)
-      /* this.onClickBtnSearch = this.onClickBtnSearch.bind(this)
-      this.showDtEndWidget = this.showDtEndWidget.bind(this)
+      this.onClickBtnSearch = this.onClickBtnSearch.bind(this)
+      /* this.showDtEndWidget = this.showDtEndWidget.bind(this)
       this.showDtStartWidget = this.showDtStartWidget.bind(this)*/
     }
     componentDidMount () {
@@ -16,13 +16,16 @@ export default class SearchForm extends Component {
       // :-D
     }
     changeHandler (e) {
-      console.log(e.target.value)
-      if (typeof this.props.onChange === 'function') {
+      if (e.target.name === 'cmbMonth') {
+        this.setState({month: e.target.value})
+      }
+      if (e.target.name === 'cmbYear') {
+        this.setState({year: e.target.value})
       }
     }
     onClickBtnSearch (e) {
       if (typeof this.props.onSearch === 'function') {
-        this.props.onSearch()
+        this.props.onSearch(this.state.month, this.state.year)
       }
     }
     render () {
@@ -32,7 +35,7 @@ export default class SearchForm extends Component {
                <div className='form-group'>
                     <label htmlFor='cmbMonth' className='col-sm-2 control-label'>Mes</label>
                     <div className='col-sm-10'>
-                       <select id='cmbMonth' onChange={this.changeHandler}>
+                       <select name='cmbMonth' onChange={this.changeHandler}>
                           <option></option>
                           <option value='1'>Enero</option>
                           <option value='2'>Febrero</option>
@@ -52,7 +55,7 @@ export default class SearchForm extends Component {
                <div className='form-group'>
                     <label htmlFor='cmbYear' className='col-sm-2 control-label'>Mes</label>
                     <div className='col-sm-10'>
-                       <select id='cmbYear' onChange={this.changeHandler}>
+                       <select name='cmbYear' onChange={this.changeHandler}>
                           <option></option>
                           {
                               [2013, 2014, 2015, 2016].map((year) => <option value={year}>{year}</option>)
@@ -72,6 +75,5 @@ export default class SearchForm extends Component {
 }
 
 SearchForm.propTypes = {
-  onChange: React.PropTypes.func,
   onSearch: React.PropTypes.func
 }

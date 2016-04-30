@@ -14,7 +14,7 @@ class Body extends Component {
     return (
         <tbody>
            {
-               this.props.Data.map((item) => <ItemRow ItemData={item} DataDefinition={this.props.DataDefinition}/>)
+               // this.props.Data.map((item) => <ItemRow ItemData={item} DataDefinition={this.props.DataDefinition}/>)
            }
         </tbody>
     )

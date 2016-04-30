@@ -7,7 +7,7 @@ import Application from './Components/Application/App.jsx'
 import d3 from 'd3'
 import moment from 'moment'
 import IndicadorInfo from './Components/IndicadorInfo/index.jsx'
-import TendenciasIndicador from './Components/TendenciasIndicador/index.jsx'
+import TendenciasApp from './Components/TendenciasIndicador/TendenciasApp.jsx'
 
 function onRender(val) {
     
@@ -46,9 +46,10 @@ function onRender(val) {
             {data: "value", label: "Valor", hidden: false},
             {data: "status", label: "", hidden: false, type: "svg"}
       ]
-      let http2 = await fetch('tendencia.json')
-      var tendenciaMock = await http2.json()
-      ReactDOM.render(<TendenciasIndicador key={"UUID-79"} Data={tendenciaMock} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
+      // let http2 = await fetch('tendencia.json')
+      // var tendenciaMock = await http2.json()
+      let urlTendencias = 'tendencia.json'
+      ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
     } catch(error) {
         console.log(error)
     }
