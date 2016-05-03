@@ -14,11 +14,14 @@ class ListFilter extends Component {
   }
   filterChild (childValue) {
     if (typeof this.props.onFilter === 'function') {
-         this.props.onFilter(this.props.ParentText, childValue)
+      this.props.onFilter(this.props.ParentText, childValue)
     }
   }
   changeHandler (e) {
-    // TODO
+    if (typeof this.props.onFilter === 'function') {
+      if (!this.state.hasChilds)
+      this.props.onFilter(this.props.ParentText, childValue)
+    }
   }
   render () {
     var childs = []
