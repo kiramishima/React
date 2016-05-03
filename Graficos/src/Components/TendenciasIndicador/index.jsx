@@ -24,7 +24,7 @@ class TendenciasIndicador extends Component {
       <div className='col-md-12'>
         <div className='row'>
           <div className='col-md-6'>
-             <TendenciasFiltro TendenciasData={this.props.Data.tendencias} onSearch={this.props.onSearch}/>
+             <TendenciasFiltro TendenciasData={linkData} onSearch={this.props.onSearch}/>
           </div>
           <div className='col-md-6'>
             <table className={this.props.className}>

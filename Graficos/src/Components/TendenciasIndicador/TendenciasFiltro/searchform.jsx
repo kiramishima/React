@@ -58,7 +58,7 @@ export default class SearchForm extends Component {
                        <select name='cmbYear' onChange={this.changeHandler}>
                           <option></option>
                           {
-                              [2013, 2014, 2015, 2016].map((year) => <option value={year}>{year}</option>)
+                              [2013, 2014, 2015, 2016].map((year) => <option key={year} value={year}>{year}</option>)
                           }
                        </select>
                     </div>

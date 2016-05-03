@@ -6,11 +6,12 @@ import Header from './Header.jsx'
 import Body from './Body.jsx'
 import TendenciasFiltro from './TendenciasFiltro/index.jsx'
 
-class TendeciasApp extends Component {
+class TendenciasApp extends Component {
   constructor (props) {
     super(props)
-    this.state = {data: {}}
+    this.state = {data: {}, filterData: {}}
     this.search = this.search.bind(this)
+    this.findByValue = this.findByValue.bind(this)
   }
   initialize () {}
   search (m, y) {
@@ -26,20 +27,21 @@ class TendeciasApp extends Component {
   }
   componentDidMount () {}
   _enableDisableRadioFilters () {}
-  filterData () {}
+  findByValue (value) {
+    
+  }
   render () {
     var linkData = this.linkState('data')
-    console.log('data', linkData.value)
     return (
       <div className='col-md-12'>
         <div className='row'>
           <div className='col-md-6'>
-             <TendenciasFiltro TendenciasData={linkData} onSearch={this.search}/>
+             <TendenciasFiltro TendenciasData={linkData} onSearch={this.search} onFilter={this.findByValue}/>
           </div>
           <div className='col-md-6'>
             <table className={this.props.className}>
               <Header DataDefinition={this.props.DataDefinition} />
-              <Body Data={linkData.value} DataDefinition={this.props.DataDefinition}/>
+              <Body Data={linkData} DataDefinition={this.props.DataDefinition}/>
             </table>
           </div>
         </div>
@@ -48,17 +50,17 @@ class TendeciasApp extends Component {
   }
 }
 
-reactMixin(TendeciasApp.prototype, LinkedStateMixin)
+reactMixin(TendenciasApp.prototype, LinkedStateMixin)
 
-TendeciasApp.propTypes = {
+TendenciasApp.propTypes = {
   Url: PropTypes.string.isRequired,
   DataDefinition: PropTypes.array.isRequired,
   className: PropTypes.string
 }
 
-TendeciasApp.defaultProps = {
+TendenciasApp.defaultProps = {
   className: 'table table-bordered table-striped',
   DataDefinition: []
 }
 
-export default TendeciasApp
+export default TendenciasApp

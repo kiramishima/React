@@ -5,22 +5,31 @@ class ListFilter extends Component {
   constructor (props) {
     super(props)
     this.state = {hasChilds: false}
+    this.changeHandler = this.changeHandler.bind(this)
+    this.filterChild = this.filterChild.bind(this)
   }
   componentDidMount () {
-    this.setState({hasChilds: this.props.SubFilters.length > 0 ? true : false})
+    var hasChilds = this.props.SubFilters.length > 0
+    this.setState({hasChilds: hasChilds})
+  }
+  filterChild (childValue) {
+    if (typeof this.props.onFilter === 'function') {
+         this.props.onFilter(this.props.ParentText, childValue)
+    }
+  }
+  changeHandler (e) {
+    // TODO
   }
   render () {
     var childs = []
     if (this.state.hasChilds) {
-       childs = this.props.SubFilters.map((item) => <ItemListFilter Value={item} Text={item}/>)
+      childs = this.props.SubFilters.map((item) => <ItemListFilter Value={item} Text={item} onFilter={this.filterChild}/>)
     }
     return (
         <div>
-           <label><input type='radio' name='parent_checkbox' onChange={this.changeHandler}/> {this.props.ParentText}</label>
-           <ul>
-           {
-               this.props.SubFilters.map()
-           }
+           <label><input type='radio' value={this.props.ParentText} checked={this.props.Checked} name='parent_checkbox' onChange={this.changeHandler}/> {this.props.ParentText}</label>
+           <ul className='list-group'>
+           {childs}
            </ul>
         </div>
     )
@@ -28,12 +37,15 @@ class ListFilter extends Component {
 }
 
 ListFilter.propTypes = {
+  Checked: PropTypes.string,
   ParentText: PropTypes.string,
-  SubFilters: PropTypes.array
+  SubFilters: PropTypes.array,
+  onFilter: PropTypes.func
 }
 
 ListFilter.defaultProps = {
-  SubFilters: []
+  SubFilters: [],
+  Checked: ''
 }
 
 export default ListFilter

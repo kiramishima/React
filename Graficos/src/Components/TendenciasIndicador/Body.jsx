@@ -22,7 +22,7 @@ class Body extends Component {
 }
 
 Body.propTypes = {
-  Data: PropTypes.array.isRequired,
+  Data: PropTypes.any.isRequired,
   DataDefinition: PropTypes.array.isRequired
 }
 

@@ -6,15 +6,17 @@ class ItemListFilter extends Component {
     this.changeHandler = this.changeHandler.bind(this)
   }
   changeHandler (e) {
-    console.log(e.target.value)  
-    if (typeof this.props.OnFilter === 'function') {
-       // TODO Parent Handler
+    if (typeof this.props.onFilter === 'function') {
+      // TODO Parent Handler
+      this.props.onFilter(e.target.value)
     }
   }
   render () {
     return (
-        <li>
-           <label><input type='radio' name='filterOption' value={this.props.Value} onChange={this.changeHandler}/> {this.props.Text}</label>
+        <li className='list-group-item'>
+           <label>
+              <input type='radio' name='filterOption' value={this.props.Value} onChange={this.changeHandler} /> {this.props.Text}
+           </label>
         </li>
     )
   }
@@ -23,7 +25,7 @@ class ItemListFilter extends Component {
 ItemListFilter.propTypes = {
   Value: PropTypes.string,
   Text: PropTypes.string,
-  OnFilter: PropTypes.func
+  onFilter: PropTypes.func
 }
 
 ItemListFilter.defaultProps = {
