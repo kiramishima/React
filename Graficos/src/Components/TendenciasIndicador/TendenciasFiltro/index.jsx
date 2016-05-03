@@ -10,7 +10,13 @@ class TendenciasFiltro extends Component {
   }
   findByValue (parent, child) {
     if (typeof this.props.onFilter === 'function') {
-      this.props.onFilter(child)
+      if (child !== null) {
+        
+      }else {
+        
+      }
+      console.log(arguments)
+      // this.props.onFilter(child)
     }
   }
   render () {

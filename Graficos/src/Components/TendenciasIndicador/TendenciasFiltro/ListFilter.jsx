@@ -19,8 +19,11 @@ class ListFilter extends Component {
   }
   changeHandler (e) {
     if (typeof this.props.onFilter === 'function') {
-      if (!this.state.hasChilds)
-      this.props.onFilter(this.props.ParentText, childValue)
+      if (!this.state.hasChilds) {
+         this.props.onFilter(this.props.ParentText, null)
+      } else {
+         this.props.onFilter(this.props.ParentText, 'Todos')
+      }
     }
   }
   render () {
