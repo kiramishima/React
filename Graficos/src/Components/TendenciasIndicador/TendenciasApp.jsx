@@ -27,8 +27,8 @@ class TendenciasApp extends Component {
   }
   componentDidMount () {}
   _enableDisableRadioFilters () {}
-  findByValue (value) {
-    
+  findByValue (pvalue, cvalue) {
+     console.log(arguments)
   }
   render () {
     var linkData = this.linkState('data')
@@ -53,7 +53,7 @@ class TendenciasApp extends Component {
 reactMixin(TendenciasApp.prototype, LinkedStateMixin)
 
 TendenciasApp.propTypes = {
-  Url: PropTypes.string.isRequired,
+  Url: PropTypes.string.isRequired,Santuario del Mezcal
   DataDefinition: PropTypes.array.isRequired,
   className: PropTypes.string
 }
