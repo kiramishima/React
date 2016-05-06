@@ -8,6 +8,7 @@ import d3 from 'd3'
 import moment from 'moment'
 import IndicadorInfo from './Components/IndicadorInfo/index.jsx'
 import TendenciasApp from './Components/TendenciasIndicador/TendenciasApp.jsx'
+import GraphIndicadorApp from './Component/IndicadoresGraficos/index.jsx'
 
 function onRender(val) {
     
@@ -48,8 +49,9 @@ function onRender(val) {
       ]
       // let http2 = await fetch('tendencia.json')
       // var tendenciaMock = await http2.json()
-      let urlTendencias = 'tendencia.json'
-      ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
+      // let urlTendencias = 'tendencia.json'
+      // ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
+      ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='' />, document.querySelector('#pruebas'))
     } catch(error) {
         console.log(error)
     }

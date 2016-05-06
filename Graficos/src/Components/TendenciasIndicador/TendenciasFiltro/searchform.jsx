@@ -7,13 +7,6 @@ export default class SearchForm extends Component {
       this.state = {month: null, year: null}
       this.changeHandler = this.changeHandler.bind(this)
       this.onClickBtnSearch = this.onClickBtnSearch.bind(this)
-      /* this.showDtEndWidget = this.showDtEndWidget.bind(this)
-      this.showDtStartWidget = this.showDtStartWidget.bind(this)*/
-    }
-    componentDidMount () {
-    }
-    componentDidUpdate () {
-      // :-D
     }
     changeHandler (e) {
       if (e.target.name === 'cmbMonth') {
@@ -29,13 +22,16 @@ export default class SearchForm extends Component {
       }
     }
     render () {
+      var dt = new Date()
+      var years = _.rangeRight(dt.getFullYear(), dt.getFullYear() - 5)
+      console.log(years)
       return (
           <div className='row'>
             <form className='form-horizontal'>
                <div className='form-group'>
                     <label htmlFor='cmbMonth' className='col-sm-2 control-label'>Mes</label>
                     <div className='col-sm-10'>
-                       <select name='cmbMonth' onChange={this.changeHandler}>
+                       <select name='cmbMonth' onChange={this.changeHandler} defaultValue={dt.getMonth()}>
                           <option></option>
                           <option value='1'>Enero</option>
                           <option value='2'>Febrero</option>
@@ -55,10 +51,10 @@ export default class SearchForm extends Component {
                <div className='form-group'>
                     <label htmlFor='cmbYear' className='col-sm-2 control-label'>Mes</label>
                     <div className='col-sm-10'>
-                       <select name='cmbYear' onChange={this.changeHandler}>
+                       <select name='cmbYear' onChange={this.changeHandler} defaultValue={dt.getFullYear()}>
                           <option></option>
                           {
-                              [2013, 2014, 2015, 2016].map((year) => <option key={year} value={year}>{year}</option>)
+                              years.map((year) => <option key={year} value={year}>{year}</option>)
                           }
                        </select>
                     </div>

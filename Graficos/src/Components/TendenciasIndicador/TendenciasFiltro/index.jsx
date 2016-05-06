@@ -11,22 +11,21 @@ class TendenciasFiltro extends Component {
   findByValue (parent, child) {
     if (typeof this.props.onFilter === 'function') {
       if (child !== null) {
-         
+         this.props.onFilter(parent, child)
       }else {
-        
+         this.props.onFilter(parent, null)
       }
-      console.log(arguments)
-      this.props.onFilter(child)
     }
-  }
+  } 
   render () {
     var capturados = []
     var lists = []
     if (!_.isEmpty(this.props.TendenciasData.value)) {
       capturados = Object.keys(_.groupBy(this.props.TendenciasData.value.tendencias, 'status'))
+      var subfilters = ['Todos', ..._.filter(capturados, function(o){ return o != ''})]
       lists = ['Capturado', 'No Capturado'].map((txt) => {
         if (txt !== 'No Capturado') {
-          return <ListFilter key={txt} ParentText={txt} Checked='checked' SubFilters={capturados} onFilter={this.findByValue}/>
+          return <ListFilter key={txt} ParentText={txt} SubFilters={subfilters} onFilter={this.findByValue}/>
         }
         return <ListFilter key={txt} ParentText={txt} SubFilters={[]} onFilter={this.findByValue}/>
       })

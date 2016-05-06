@@ -56,9 +56,9 @@ class ItemRow extends Component {
       // console.log('index', item)
       var text = this.props.ItemData[item.data]
       if (item.type === 'svg') {
-        return <Item Text={text} Hidden={item.hidden} Type='SVG'/>
+        return <Item key={`Item_${item.UUID}_${item.data}`} Text={text} Hidden={item.hidden} Type='SVG'/>
       } else {
-        return <Item Text={text} Hidden={item.hidden}/>
+        return <Item key={`Item_${item.UUID}_${item.data}`} Text={text} Hidden={item.hidden}/>
       }
     })
   }

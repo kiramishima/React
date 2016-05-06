@@ -19,7 +19,7 @@ class TendenciasApp extends Component {
           try {
               var request = await fetch(this.props.Url)
               var response = await request.json()
-              this.setState({data: response})
+              this.setState({data: response, filterData: response})
           } catch(error) {
             console.log('TendenciasApp Error: ', error)
           }
@@ -28,10 +28,26 @@ class TendenciasApp extends Component {
   componentDidMount () {}
   _enableDisableRadioFilters () {}
   findByValue (pvalue, cvalue) {
-     console.log(arguments)
+     var cdata = Object.assign({}, this.state.data)
+     if (cvalue !== null){
+        if (cvalue === 'Todos'){
+          var fdata = _.filter(cdata.tendencias, function(o){ return o.status != ''})
+          cdata.tendencias = fdata
+          this.setState({filterData: cdata})
+        }else{
+          var fdata = _.filter(cdata.tendencias, function(o){ return o.status == cvalue})
+          cdata.tendencias = fdata
+          this.setState({filterData: cdata})
+        }
+     }else {
+        var fdata = _.filter(cdata.tendencias, function(o){ return o.status == ''})
+        cdata.tendencias = fdata
+        this.setState({filterData: cdata})
+     }
   }
   render () {
     var linkData = this.linkState('data')
+    var linkFilterData = this.linkState('filterData')
     return (
       <div className='col-md-12'>
         <div className='row'>
@@ -41,7 +57,7 @@ class TendenciasApp extends Component {
           <div className='col-md-6'>
             <table className={this.props.className}>
               <Header DataDefinition={this.props.DataDefinition} />
-              <Body Data={linkData} DataDefinition={this.props.DataDefinition}/>
+              <Body Data={linkFilterData} DataDefinition={this.props.DataDefinition}/>
             </table>
           </div>
         </div>
@@ -53,7 +69,7 @@ class TendenciasApp extends Component {
 reactMixin(TendenciasApp.prototype, LinkedStateMixin)
 
 TendenciasApp.propTypes = {
-  Url: PropTypes.string.isRequired,Santuario del Mezcal
+  Url: PropTypes.string.isRequired,
   DataDefinition: PropTypes.array.isRequired,
   className: PropTypes.string
 }

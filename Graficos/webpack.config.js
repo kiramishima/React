@@ -3,7 +3,8 @@ var webpack = require('webpack')
 var config = {
   entry: {
     // boot: path.join(__dirname, 'src'),
-    app: path.join(__dirname, 'src', 'bootstrap.js')
+    // app: path.join(__dirname, 'src', 'bootstrap.js'),
+    psar_main: path.join(__dirname, 'src', 'boot_graph_principal.js')
   },
   output: {
     path: path.join(__dirname, 'dist'),

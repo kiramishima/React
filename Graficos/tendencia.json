@@ -18,6 +18,14 @@
             "ind_name": "Desempeño del proceso",
             "value": "10%",
             "status": "Rojo"
+        },
+        {
+            "UUID": "38c28d18-1062-4366-bb1b-56722f75ff18",
+            "service_name": "Administración de la cuenta",
+            "process_name": "Registro de trabajadores",
+            "ind_name": "Desempeño del proceso",
+            "value": "15%",
+            "status": ""
         }
     ]
 }

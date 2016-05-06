@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react'
+import _ from 'lodash'
 import ItemRow from './ItemRow.jsx'
 
 class Body extends Component {
@@ -11,19 +12,28 @@ class Body extends Component {
     this.setState({definition: def})
   }
   render () {
-    return (
-        <tbody>
-           {
-               // this.props.Data.map((item) => <ItemRow ItemData={item} DataDefinition={this.props.DataDefinition}/>)
-           }
-        </tbody>
-    )
+    if (!_.isEmpty(this.props.Data.value)) {
+      var items = this.props.Data.value.tendencias
+      return (
+          <tbody>
+             {
+                 items.map((item) => <ItemRow key={`ItemRow_${item.UUID}`} ItemData={item} DataDefinition={this.props.DataDefinition}/>)
+             }
+          </tbody>
+      )
+    }
+    return (<tbody></tbody>)
   }
 }
 
 Body.propTypes = {
   Data: PropTypes.any.isRequired,
   DataDefinition: PropTypes.array.isRequired
+}
+
+Body.defaultProps = {
+  Data: [],
+  DataDefinition: []
 }
 
 export default Body
