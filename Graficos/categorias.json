@@ -1,0 +1,21 @@
+{
+	"status": 200,
+	"data": [
+		{
+			"cat_id": 1,
+			"category": "Categoria 1",
+			"subcategories": [
+				{"scat_id": 1, "subcategory": "Subcategoria 1"},
+				{"scat_id": 2, "subcategory": "Subcategoria 2"}
+			]
+		},
+		{
+			"cat_id": 2,
+			"category": "Categoria 2",
+			"subcategories": [
+				{"scat_id": 1, "subcategory": "Subcategoria 1"},
+				{"scat_id": 2, "subcategory": "Subcategoria 2"}
+			]
+		}
+	]
+}

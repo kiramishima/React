@@ -1,0 +1,31 @@
+{
+	"status": 200,
+	"data": [
+		{
+			"Text": "Seleccionado 1",
+			"info": [
+				{"Month": "Octubre", "Year": "2015", "Value": "95"},
+				{"Month": "Noviembre", "Year": "2015", "Value": "95"},
+				{"Month": "Diciembre", "Year": "2015", "Value": "95"},
+				{"Month": "Enero", "Year": "2016", "Value": "95"},
+				{"Month": "Febrero", "Year": "2016", "Value": "95"},
+				{"Month": "Marzo", "Year": "2016", "Value": "95"},
+				{"Month": "Abril", "Year": "2016", "Value": "95"},
+				{"Month": "Mayo", "Year": "2016", "Value": "95"}
+			]
+		},
+		{
+			"Text": "Seleccionado 2",
+			"info": [
+				{"Month": "Octubre", "Year": "2015", "Value": "65"},
+				{"Month": "Noviembre", "Year": "2015", "Value": "65"},
+				{"Month": "Diciembre", "Year": "2015", "Value": "65"},
+				{"Month": "Enero", "Year": "2016", "Value": "65"},
+				{"Month": "Febrero", "Year": "2016", "Value": "65"},
+				{"Month": "Marzo", "Year": "2016", "Value": "65"},
+				{"Month": "Abril", "Year": "2016", "Value": "65"},
+				{"Month": "Mayo", "Year": "2016", "Value": "65"}
+			]
+		}
+	]
+}

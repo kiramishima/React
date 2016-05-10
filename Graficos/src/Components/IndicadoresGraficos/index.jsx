@@ -10,7 +10,7 @@ class GraphIndicadorApp extends React.Component {
 	render () {
 		return (
 			<div className='row'>
-				<FilterSection />
+				<FilterSection Url={this.props.Url} UrlFiltros={this.props.UrlFiltros} />
 				<ContentSection />
 			</div>
 		)
@@ -18,7 +18,8 @@ class GraphIndicadorApp extends React.Component {
 }
 
 GraphIndicadorApp.propTypes = {
-  Url: PropTypes.string.isRequired
+  Url: React.PropTypes.string.isRequired,
+  UrlFiltros: React.PropTypes.string.isRequired
 }
 
 // GraphIndicadorApp.defaultProps = {}

@@ -7,30 +7,37 @@ class Filter extends Component {
 		super(props)
 		this.state = {dtStart: '', dtEnd: ''}
 		this._search = this._search.bind(this)
+		this.handleDtStartChange = this.handleDtStartChange.bind(this)
+		this.handleDtEndChange = this.handleDtEndChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 	componentDidMount () {
 		this._dtStart = new Pikaday({
     		field: this.refs.dtStart,
-        	format: 'DD/MM/YYYY'
+        	format: 'DD/MM/YYYY',
+        	onSelect: this.handleDtStartChange
       	})
       	this._dtEnd = new Pikaday({
         	field: this.refs.dtEnd,
-        	format: 'DD/MM/YYYY'
+        	format: 'DD/MM/YYYY',
+        	onSelect: this.handleDtEndChange
       	})
       	var dt = moment().add(7, 'days').format('MM/DD/YYYY')
       	this._dtStart.setDate(moment().format('MM/DD/YYYY'))
       	this._dtEnd.setDate(dt)
 	}
-	_search () {
+	_search (dtStart, dtEnd) {
 		if (typeof this.props.DoSearch === 'function') {
-			console.log('refs', this.refs)
+	        this.props.DoSearch(dtStart, dtEnd)
 		}
 	}
 	handleDtStartChange (e) {
-	    this.setState({dtStart: e.target.value});
+		var dt = moment(e).format('DD/MM/YYYY')
+		this.setState({dtStart: dt})
 	}
 	handleDtEndChange (e) {
-    	this.setState({dtEnd: e.target.value});
+		var dt = moment(e).format('DD/MM/YYYY')
+		this.setState({dtEnd: dt})
   	}
   	handleSubmit (e) {
 	    e.preventDefault();
@@ -39,10 +46,8 @@ class Filter extends Component {
 	    if (!dtEnd || !dtStart) {
 	      return;
 	    }
-	    console.log('dtStart', dtStart)
-	    console.log('dtEnd', dtEnd)
-	    // TODO: send request to the server
-	    // this.setState({author: '', text: ''});
+	    
+	    this._search(dtStart, dtEnd)
 	}
 	render () {
 		return (
@@ -50,17 +55,17 @@ class Filter extends Component {
 				<form className='form-inline' ref="form" onSubmit={this.handleSubmit}>
 				  <div className='form-group'>
 				    <div className='input-group'>
-				      <input ref='dtStart' type='text' value={this.state.dtStart} className='form-control' placeholder='DD/MM/YYYY' onChange={this.handleDtStartChange} />
+				      <input ref='dtStart' type='text' value={this.state.dtStart} className='form-control' placeholder='DD/MM/YYYY' />
 				      <div className='input-group-addon'><i className='glyphicon glyphicon-calendar'></i></div>
 				    </div>
 				  </div>
-				  <div class='form-group'>
+				  <div className='form-group'>
 				    <div className='input-group'>
-				      <input ref='dtEnd' type='text' value={this.state.dtEnd} className='form-control' placeholder='DD/MM/YYYY' onChange={this.handleDtEndChange} />
+				      <input ref='dtEnd' type='text' value={this.state.dtEnd} className='form-control' placeholder='DD/MM/YYYY' />
 				      <div className='input-group-addon'><i className='glyphicon glyphicon-calendar'></i></div>
 				    </div>
 				  </div>
-				  <button type='submit' class='btn btn-default'>Buscar</button>
+				  <button type='submit' className='btn btn-default'>Buscar</button>
 				</form>
 			</div>
 		)

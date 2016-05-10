@@ -3,12 +3,9 @@ require('babel-polyfill')
 import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash'
-import Application from './Components/Application/App.jsx'
 import d3 from 'd3'
 import moment from 'moment'
-import IndicadorInfo from './Components/IndicadorInfo/index.jsx'
-import TendenciasApp from './Components/TendenciasIndicador/TendenciasApp.jsx'
-import GraphIndicadorApp from './Component/IndicadoresGraficos/index.jsx'
+import GraphIndicadorApp from './Components/IndicadoresGraficos/index.jsx'
 
 function onRender(val) {
     
@@ -51,7 +48,7 @@ function onRender(val) {
       // var tendenciaMock = await http2.json()
       // let urlTendencias = 'tendencia.json'
       // ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
-      ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='' />, document.querySelector('#pruebas'))
+      ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='categorias.json' />, document.querySelector('#pruebas'))
     } catch(error) {
         console.log(error)
     }
