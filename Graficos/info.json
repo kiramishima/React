@@ -2,8 +2,8 @@
 	"status": 200,
 	"data": [
 		{
-			"Text": "Seleccionado 1",
-			"info": [
+			"Proceso": "Seleccionado 1",
+			"Schedule": [
 				{"Month": "Octubre", "Year": "2015", "Value": "95"},
 				{"Month": "Noviembre", "Year": "2015", "Value": "95"},
 				{"Month": "Diciembre", "Year": "2015", "Value": "95"},
@@ -15,8 +15,8 @@
 			]
 		},
 		{
-			"Text": "Seleccionado 2",
-			"info": [
+			"Proceso": "Seleccionado 2",
+			"Schedule": [
 				{"Month": "Octubre", "Year": "2015", "Value": "65"},
 				{"Month": "Noviembre", "Year": "2015", "Value": "65"},
 				{"Month": "Diciembre", "Year": "2015", "Value": "65"},

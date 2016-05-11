@@ -48,7 +48,7 @@ function onRender(val) {
       // var tendenciaMock = await http2.json()
       // let urlTendencias = 'tendencia.json'
       // ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
-      ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='categorias.json' />, document.querySelector('#pruebas'))
+      ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='categorias.json' UrlFiltros='info.json'/>, document.querySelector('#pruebas'))
     } catch(error) {
         console.log(error)
     }

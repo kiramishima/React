@@ -6,7 +6,7 @@ import Treeview from './Treeview/index.jsx'
 class FilterSection extends Component {
 	constructor (props){
 		super(props)
-		this.state = {loaded: false, response: null, list: [], tables: []}
+		this.state = {loaded: false, response: null, list: []}
 		this._search = this._search.bind(this)
 		this._listSearch = this._listSearch.bind(this)
 		this._getContent = this._getContent.bind(this)
@@ -43,15 +43,16 @@ class FilterSection extends Component {
 			this.setState({list: current})
 		}
 		// peticion a la API
-
+		this._getContent()
 	}
 	_getContent () {
 		try {
 			(async () => {
 				var http = await fetch(this.props.UrlFiltros)
 				var response = await http.json()
-
-				this.setState({tables: response.data})
+				if (typeof this.props.SelectedObjects === 'function') {
+					this.props.SelectedObjects(response.data)
+				}
 			})()
 		}catch(e){
 			console.log(`Error ${e}`)
