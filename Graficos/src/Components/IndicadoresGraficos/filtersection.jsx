@@ -9,21 +9,14 @@ class FilterSection extends Component {
 		this.state = {loaded: false, response: null, list: []}
 		this._search = this._search.bind(this)
 		this._listSearch = this._listSearch.bind(this)
-		this._getContent = this._getContent.bind(this)
+		this._getIndicadoresList = this._getIndicadoresList.bind(this)
 	}
 	componentDidMount () {
-		this._search()
+		this._getIndicadoresList()
 	}
 	_search (dtStart, dtEnd) {
 		try {
-	        (async () => {
-	        	this.setState({loaded: false})
-
-                let data = await fetch(this.props.Url)
-      			var response = await data.json()
-
-      			this.setState({loaded: true, response: response.data})
-	        })()
+	        this.props.GetData(dtStart, dtEnd, this.state.list)
     	} catch (e) {
     		console.log('FilterSection', e)
     	}
@@ -42,17 +35,14 @@ class FilterSection extends Component {
 			current.push({c:parendId, sc:childId})
 			this.setState({list: current})
 		}
-		// peticion a la API
-		this._getContent()
 	}
-	_getContent () {
+	_getIndicadoresList () {
 		try {
 			(async () => {
-				var http = await fetch(this.props.UrlFiltros)
+				this.setState({loaded: false})
+				var http = await fetch(this.props.UrlIndicadores)
 				var response = await http.json()
-				if (typeof this.props.SelectedObjects === 'function') {
-					this.props.SelectedObjects(response.data)
-				}
+				this.setState({loaded: true, response: response.data})
 			})()
 		}catch(e){
 			console.log(`Error ${e}`)
@@ -63,7 +53,7 @@ class FilterSection extends Component {
 			<div className='col-sm-4 col-md-4'>
 				<Filter DoSearch={this._search}/>
 				<Loader loaded={this.state.loaded} top='60%'>
-				   <Treeview DataModel={this.state.response} SelectedItem={this._listSearch}/>
+				   <Treeview key='Treeview' DataModel={this.state.response} SelectedItem={this._listSearch}/>
 				</Loader>
 			</div>
 		)
@@ -71,9 +61,8 @@ class FilterSection extends Component {
 }
 
 FilterSection.propTypes = {
-  SelectedObjects: PropTypes.func,
-  Url: PropTypes.string,
-  UrlFiltros: PropTypes.string
+  GetData: PropTypes.func,
+  UrlIndicadores: PropTypes.string
 }
 
 FilterSection.defaultProps = {}

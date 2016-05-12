@@ -1,5 +1,6 @@
 // Carga React :P
 require('babel-polyfill')
+import './sass/Indicadores_Graficos.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash'
@@ -48,7 +49,7 @@ function onRender(val) {
       // var tendenciaMock = await http2.json()
       // let urlTendencias = 'tendencia.json'
       // ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
-      ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='categorias.json' UrlFiltros='info.json'/>, document.querySelector('#pruebas'))
+      ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='info.json' UrlIndicadores='categorias.json'/>, document.querySelector('#pruebas'))
     } catch(error) {
         console.log(error)
     }

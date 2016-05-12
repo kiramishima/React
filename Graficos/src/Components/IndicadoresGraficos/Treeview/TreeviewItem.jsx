@@ -52,7 +52,7 @@ class TreeviewItem extends Component {
 			   		{this.props.Parent}
 			   </div>
 			   <ul style={{display: this.state.toggle ? '' : 'none'}}>
-			      {this.props.Childrens.map((child) => <ChildrenItem Parent={this.props.Parent} ParentId={this.props.ParentID} Id={child.scat_id} Text={child.subcategory} Selected={this._selected}/>)}
+			      {this.props.Childrens.map((child) => <ChildrenItem key={`${this.props.ParentID}-${child.scat_id}`} Parent={this.props.Parent} ParentId={this.props.ParentID} Id={child.scat_id} Text={child.subcategory} Selected={this._selected}/>)}
 			   </ul>
 			</li>
 		)

@@ -5,7 +5,7 @@ class Header extends Component {
     super(props)
   }
   render () {
-    console.log(this.props.DataDefinition.value.length)
+    // console.log(this.props.DataDefinition.value.length)
     if (this.props.DataDefinition.value.length > 0) {
       var items = this.props.DataDefinition.value
       return (

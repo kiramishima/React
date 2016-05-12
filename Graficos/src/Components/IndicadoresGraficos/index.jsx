@@ -6,17 +6,27 @@ import Loader from 'react-loader'
 class GraphIndicadorApp extends React.Component {
 	constructor (props){
 		super(props)
-		this.state = {data: []}
+		this.state = {query: []}
 		this._searchInformactionBySelected = this._searchInformactionBySelected.bind(this)
 	}
-	_searchInformactionBySelected (httpResponse) {
-		this.setState({data: httpResponse})
+	_searchInformactionBySelected (listQuery) {
+		try {
+	        (async () => {
+	        	this.setState({loaded: false})
+	        	// TODO inyectar el listado en la consulta
+                let data = await fetch(this.props.Url)
+      			var response = await data.json()
+      			this.setState({loaded: true, query: response.data})
+	        })()
+    	} catch (e) {
+    		console.log('FilterSection', e)
+    	}
 	}
 	render () {
 		return (
 			<div className='row'>
-				<FilterSection Url={this.props.Url} UrlFiltros={this.props.UrlFiltros} SelectedObjects={this._searchInformactionBySelected} />
-				<ContentSection Data={this.state.data}/>
+				<FilterSection UrlIndicadores={this.props.UrlIndicadores} GetData={this._searchInformactionBySelected} />
+				<ContentSection Data={this.state.query}/>
 			</div>
 		)
 	}
@@ -24,7 +34,7 @@ class GraphIndicadorApp extends React.Component {
 
 GraphIndicadorApp.propTypes = {
   Url: React.PropTypes.string.isRequired,
-  UrlFiltros: React.PropTypes.string.isRequired
+  UrlIndicadores: React.PropTypes.string.isRequired
 }
 
 // GraphIndicadorApp.defaultProps = {}

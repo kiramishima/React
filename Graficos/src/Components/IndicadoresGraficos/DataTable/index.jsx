@@ -7,19 +7,20 @@ import Body from './Body.jsx'
 class DataTable extends Component {
 	constructor (props) {
 		super(props)
-		this.state = {header: []}
+		this.state = {header: [], body: []}
 	}
 	componentWillReceiveProps (nextprops) {
-		this.setState({header: nextprops.HeaderDefinition})
+		this.setState({header: nextprops.HeaderDefinition, body: nextprops.Data})
 	}
 	render () {
 		var linkHeader = this.linkState('header')
+		var linkBody = this.linkState('body')
 		return (
 			<div className='row'>
 				<div className='col-sm-12 col-md-12'>
 					<table className={this.props.className}>
 					    <Header DataDefinition={linkHeader}/>
-					    <tbody></tbody>
+					    <Body Data={linkBody}/>
 		            </table>
 				</div>
 			</div>

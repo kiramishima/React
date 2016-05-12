@@ -4,27 +4,27 @@
 		{
 			"Proceso": "Seleccionado 1",
 			"Schedule": [
-				{"Month": "Octubre", "Year": "2015", "Value": "95"},
+				{"Month": "Octubre", "Year": "2015", "Value": "85"},
 				{"Month": "Noviembre", "Year": "2015", "Value": "95"},
-				{"Month": "Diciembre", "Year": "2015", "Value": "95"},
-				{"Month": "Enero", "Year": "2016", "Value": "95"},
-				{"Month": "Febrero", "Year": "2016", "Value": "95"},
-				{"Month": "Marzo", "Year": "2016", "Value": "95"},
-				{"Month": "Abril", "Year": "2016", "Value": "95"},
-				{"Month": "Mayo", "Year": "2016", "Value": "95"}
+				{"Month": "Diciembre", "Year": "2015", "Value": "55"},
+				{"Month": "Enero", "Year": "2016", "Value": "41"},
+				{"Month": "Febrero", "Year": "2016", "Value": "22"},
+				{"Month": "Marzo", "Year": "2016", "Value": "5"},
+				{"Month": "Abril", "Year": "2016", "Value": "15"},
+				{"Month": "Mayo", "Year": "2016", "Value": "35"}
 			]
 		},
 		{
 			"Proceso": "Seleccionado 2",
 			"Schedule": [
 				{"Month": "Octubre", "Year": "2015", "Value": "65"},
-				{"Month": "Noviembre", "Year": "2015", "Value": "65"},
-				{"Month": "Diciembre", "Year": "2015", "Value": "65"},
-				{"Month": "Enero", "Year": "2016", "Value": "65"},
-				{"Month": "Febrero", "Year": "2016", "Value": "65"},
-				{"Month": "Marzo", "Year": "2016", "Value": "65"},
-				{"Month": "Abril", "Year": "2016", "Value": "65"},
-				{"Month": "Mayo", "Year": "2016", "Value": "65"}
+				{"Month": "Noviembre", "Year": "2015", "Value": "55"},
+				{"Month": "Diciembre", "Year": "2015", "Value": "35"},
+				{"Month": "Enero", "Year": "2016", "Value": "15"},
+				{"Month": "Febrero", "Year": "2016", "Value": "45"},
+				{"Month": "Marzo", "Year": "2016", "Value": "75"},
+				{"Month": "Abril", "Year": "2016", "Value": "85"},
+				{"Month": "Mayo", "Year": "2016", "Value": "5"}
 			]
 		}
 	]

@@ -17,7 +17,7 @@ class Treeview extends Component {
 			   <div className='col-xs-12 col-sm-12 col-md-12'>
 			   		<br />
 					<ul>
-						{ this.props.DataModel.map( (item) => <TreeviewItem Selected={this._selected} ParentID={item.cat_id} Parent={item.category} Childrens={item.subcategories}/>)}
+						{ this.props.DataModel.map( (item) => <TreeviewItem key={`${item.cat_id}`} Selected={this._selected} ParentID={item.cat_id} Parent={item.category} Childrens={item.subcategories}/>)}
 					</ul>
 				</div>
 			</div>

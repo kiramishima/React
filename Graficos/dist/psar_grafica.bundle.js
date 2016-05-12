@@ -76,43 +76,16 @@
 	
 	function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; }
 	
-	// Carga React :P
 	__webpack_require__(292);
 	
 	
-	function onRender(val) {
-	
-	    var dt = (0, _moment2.default)(parseInt(val)).format('L');
-	    return dt;
-	}
-	
 	_asyncToGenerator(regeneratorRuntime.mark(function _callee() {
-	    var metadata, DataDefinition;
 	    return regeneratorRuntime.wrap(function _callee$(_context) {
 	        while (1) {
 	            switch (_context.prev = _context.next) {
 	                case 0:
 	                    try {
-	                        // let data = await fetch('data.json')
-	                        // var parsedData = await data.json()
-	                        // console.log('ES7 Async+fetch/data >>>', parsedData)
-	                        // buildHeader(parsedData.data)
-	                        // ReactDOM.render(<DataTableSAR key={"UUID-12"} url={'data.json'} metadata={metadata}/>, document.querySelector('#appContainer'))
-	                        metadata = [{ data: "UUID", name: "UUID", label: "Id", hidden: true }, { data: "Project", name: "Project", label: "Proyecto", hidden: false }, { data: "iDate", name: "iDate", label: "Fh. Registro", hidden: false, render: onRender }, { data: "dProcesos", name: "dProcesos", label: "Desempeño de procesos", hidden: false, type: "children" }, { data: "dProductos", name: "dProductos", label: "Desempeño del producto/servicio", hidden: false, type: "children" }, { data: "sCliente", name: "sCliente", label: " Satisfacion del cliente", hidden: false, type: "children" }, { data: "dProveedor", name: "dProveedor", label: "Desempeño del proveedor", hidden: false, type: "children" }];
-	                        // ReactDOM.render(<Application key={"UUID-29"} Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
-	
-	                        // let http = await fetch('indicador.json')
-	                        // var mockData = await http.json()
-	
-	                        // ReactDOM.render(<IndicadorInfo key={"UUID-78"} Data={mockData.indicadores} />, document.querySelector('#pruebas'))
-	
-	                        DataDefinition = [{ data: "UUID", label: "Id", hidden: true }, { data: "service_name", label: "Servicio", hidden: false }, { data: "process_name", label: "Proceso", hidden: false }, { data: "ind_name", label: "Indicador", hidden: false }, { data: "value", label: "Valor", hidden: false }, { data: "status", label: "", hidden: false, type: "svg" }];
-	                        // let http2 = await fetch('tendencia.json')
-	                        // var tendenciaMock = await http2.json()
-	                        // let urlTendencias = 'tendencia.json'
-	                        // ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
-	
-	                        _reactDom2.default.render(_react2.default.createElement(_index2.default, { key: "UUID-99", Url: 'info.json', UrlIndicadores: 'categorias.json' }), document.querySelector('#pruebas'));
+	                        _reactDom2.default.render(_react2.default.createElement(_index2.default, { key: "UUID-99", Url: 'info.json', UrlIndicadores: 'categorias.json' }), document.querySelector('#appContainer'));
 	                    } catch (error) {
 	                        console.log(error);
 	                    }
@@ -86636,4 +86609,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=app.bundle.js.map
+//# sourceMappingURL=psar_grafica.bundle.js.map

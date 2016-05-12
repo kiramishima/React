@@ -1,22 +1,26 @@
 import React, {Component, PropTypes} from 'react'
+import ItemRow from './ItemRow.jsx'
 
 class Body extends Component {
   constructor (props) {
     super(props)
     this.state = {}
+    this._createRows = this._createRows.bind(this)
   }
   componentDidMount () {
-    var def = Object.keys(this.props.DataDefinition)
-    this.setState({definition: def})
+  }
+  _createCell (value) {
+     return <td>{value}</td>
+  }
+  _createRows () {
+    var data = this.props.Data.value
+    return data.map((items) => <ItemRow Data={items}/>)
   }
   render () {
-    if (!_.isEmpty(this.props.Data.value)) {
-      var items = this.props.Data.value.tendencias
+    if (this.props.Data.value.length > 0) {
       return (
           <tbody>
-             {
-                 items.map((item) => <ItemRow key={`ItemRow_${item.UUID}`} ItemData={item} DataDefinition={this.props.DataDefinition}/>)
-             }
+             {this._createRows()}
           </tbody>
       )
     }
@@ -25,13 +29,11 @@ class Body extends Component {
 }
 
 Body.propTypes = {
-  Data: PropTypes.any.isRequired,
-  DataDefinition: PropTypes.array.isRequired
+  Data: PropTypes.any.isRequired
 }
 
 Body.defaultProps = {
-  Data: [],
-  DataDefinition: []
+  Data: []
 }
 
 export default Body
