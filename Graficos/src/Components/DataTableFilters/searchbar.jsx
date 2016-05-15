@@ -76,31 +76,33 @@ export default class SearchBar extends Component {
         'display': 'flex'
       }
       return (
-          <div className='searchBarContainer' >
-            <ul style={styles}>
-                <li>
-                    <div className={"input-group input-group-sm"}>
-                        <input id='datepicker' name='dtStart' onBlur={this.changeHandler} type='text' className={"form-control"} placeholder='DD/MM/YYYY' />
-                        <span className={"input-group-btn"}>
-                            <button className={"btn btn-default"} type='button' onClick={this.showDtStartWidget} >
-                            <span className={"glyphicon glyphicon glyphicon-calendar"} aria-hidden='true'></span>
-                            </button>
-                        </span>
-                    </div>
-                </li>
-                <li>&nbsp;</li>
-                <li>
-                    <div className='input-group input-group-sm'>
-                        <input id='datepicker2' name='dtEnd' onBlur={this.changeHandler} type='text' className={"form-control"} placeholder='DD/MM/YYYY' />
-                        <span className='input-group-btn'>
-                            <button className='btn btn-default' type='button' onClick={this.showDtEndWidget}>
-                            <span className='glyphicon glyphicon glyphicon-calendar' aria-hidden='true'></span>
-                            </button>
-                        </span>
-                    </div>
-                </li>
-            </ul>
-            <button className='btn btn-default' type='button' onClick={this.onClickBtnSearch} style={{float: 'right'}}>Buscar</button>
+          <div className='row' >
+            <div className='col-md-12 col-sm-12'>
+              <ul style={styles}>
+                  <li>
+                      <div className={"input-group input-group-sm"}>
+                          <input id='datepicker' name='dtStart' onBlur={this.changeHandler} type='text' className={"form-control"} placeholder='DD/MM/YYYY' />
+                          <span className={"input-group-btn"}>
+                              <button className={"btn btn-default"} type='button' onClick={this.showDtStartWidget} >
+                              <span className={"glyphicon glyphicon glyphicon-calendar"} aria-hidden='true'></span>
+                              </button>
+                          </span>
+                      </div>
+                  </li>
+                  <li>&nbsp;</li>
+                  <li>
+                      <div className='input-group input-group-sm'>
+                          <input id='datepicker2' name='dtEnd' onBlur={this.changeHandler} type='text' className={"form-control"} placeholder='DD/MM/YYYY' />
+                          <span className='input-group-btn'>
+                              <button className='btn btn-default' type='button' onClick={this.showDtEndWidget}>
+                              <span className='glyphicon glyphicon glyphicon-calendar' aria-hidden='true'></span>
+                              </button>
+                          </span>
+                      </div>
+                  </li>
+              </ul>
+              <button className='btn btn-default' type='button' onClick={this.onClickBtnSearch} style={{float: 'right'}}>Buscar</button>
+            </div>
           </div>
       )
     }

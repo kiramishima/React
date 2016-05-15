@@ -39,7 +39,7 @@ class Application extends Component {
       this._getData()
     }
     changeHandler (states) {
-        console.log('states', states)
+        // console.log('states', states)
         this.setState({dtStart: states.dtStart, dtEnd: states.dtEnd})
     }
     render () {
@@ -56,12 +56,8 @@ class Application extends Component {
       return (
           <div className="row">
             <div className="col-md-4 col-sm-3">
-                <div className={"DataTableApplication"}>
-                    <div className={"DataTableContainerLayout"}>
-                        <SearchBar key={"UUID-22"} onChange={this.changeHandler} onSearch={this.onSearch}/>
-                        <FilterItemList key={"UUID-15"} Items={this.state.data} onSelected={this._selectedData} /> 
-                    </div>
-                </div>
+                <SearchBar key={"UUID-22"} onChange={this.changeHandler} onSearch={this.onSearch}/>
+                <FilterItemList key={"UUID-15"} Items={this.state.data} onSelected={this._selectedData} />
             </div>
             <div className="col-md-8 col-sm-9">
                 <div className="table-responsive">
