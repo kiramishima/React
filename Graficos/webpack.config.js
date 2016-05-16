@@ -10,7 +10,8 @@ var config = {
     psar_grafica: path.join(__dirname, 'src', 'boot_graph.js')
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: 'dist/',
     filename: '[name].bundle.js'
   },
   devtool: ['source-map'],
@@ -26,12 +27,14 @@ var config = {
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
-        include: path.join(__dirname, 'src', 'sass')
+        loader: 'style-loader!css!sass',
+        include: [path.join(__dirname, 'src', 'sass'), path.join(__dirname, 'node_modules')]
       },{
         test: /\.css$/,
-        loaders: ['style', 'css']
-      }
+        loader: 'style-loader!css'
+      },
+      {test: /\.(png|jpg|svg|woff|woff2)?(\?v=\d+.\d+.\d+)?$/, loader: 'url-loader?limit=8192'},
+      {test: /\.(eot|ttf)$/, loader: 'file-loader'}
     ]
   },
   plugins: [
