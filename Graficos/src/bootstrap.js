@@ -8,7 +8,8 @@ import _ from 'lodash'
 // import bootstrap from 'bootstrap-sass'
 import d3 from 'd3'
 import moment from 'moment'
-import GraphIndicadorApp from './Components/IndicadoresGraficos/index.jsx'
+import Application from './Components/Application/App.jsx'
+// import GraphIndicadorApp from './Components/IndicadoresGraficos/index.jsx'
 
 function onRender(val) {
     
@@ -33,7 +34,7 @@ function onRender(val) {
             {data: "sCliente", name: "sCliente", label: " Satisfacion del cliente", hidden: false, type: "children"},
             {data: "dProveedor", name: "dProveedor", label: "Desempeño del proveedor", hidden: false, type: "children"}
       ]
-      // ReactDOM.render(<Application key={"UUID-29"} Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
+      ReactDOM.render(<Application key={"UUID-29"} Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
       
       // let http = await fetch('indicador.json')
       // var mockData = await http.json()
@@ -51,7 +52,7 @@ function onRender(val) {
       // var tendenciaMock = await http2.json()
       // let urlTendencias = 'tendencia.json'
       // ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
-      ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='info.json' UrlIndicadores='categorias.json'/>, document.querySelector('#pruebas'))
+      // ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='info.json' UrlIndicadores='categorias.json'/>, document.querySelector('#pruebas'))
     } catch(error) {
         console.log(error)
     }

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import FilterItemRow from './FilterItemRow.jsx'
-import _ from 'lodash'
 
 export default class FilterItemList extends Component {
     constructor (props) {
@@ -33,9 +32,13 @@ export default class FilterItemList extends Component {
         rows.push(<FilterItemRow key={item.UUID} Item={item} onClick={this.onClick} UUID={item.UUID} Label={item.Project} />)
       })
       return (
-          <ul style={styles}>
-          {rows}
-          </ul>
+          <div className='row'>
+            <div className='col-md-12 col-sm-12'>
+              <ul style={styles}>
+              {rows}
+              </ul>
+            </div>
+          </div>
       )
     }
 }
