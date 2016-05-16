@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import reactMixin from 'react-mixin'
 import LinkedStateMixin from 'react-addons-linked-state-mixin'
-import _ from 'lodash'
 import ItemHeader from './itemHeader.jsx'
 import DataTableBody from './datatablebody.jsx'
 // import ItemRow from './itemRow.jsx'

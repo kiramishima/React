@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react'
-import _ from 'lodash'
 import SearchForm from './searchform.jsx'
 import ListFilter from './ListFilter.jsx'
 

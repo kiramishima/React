@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import reactMixin from 'react-mixin'
 import LinkedStateMixin from 'react-addons-linked-state-mixin'
-import _ from 'lodash'
 import Header from './Header.jsx'
 import Body from './Body.jsx'
 import TendenciasFiltro from './TendenciasFiltro/index.jsx'

@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react'
-import _ from 'lodash'
 import ItemRow from './ItemRow.jsx'
 
 class Body extends Component {

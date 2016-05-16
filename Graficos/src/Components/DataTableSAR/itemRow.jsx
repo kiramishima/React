@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import _ from 'lodash'
 import Item from './item.jsx'
 import DotsD3 from '../DotsD3/index.jsx'
 
