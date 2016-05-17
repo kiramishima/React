@@ -1,0 +1,27 @@
+{
+    "macroprocesos": [{
+        "id": 1,
+        "name": "Atención a clientes y stateholders"
+    }, {
+        "id": 2,
+        "name": "Auditoría interna"
+    }, {
+        "id": 3,
+        "name": "Desarrollo de soluciones"
+    }, {
+        "id": 4,
+        "name": "Desarrollo organizacional"
+    }, {
+        "id": 5,
+        "name": "Gestión de riesgos, continuidad de negocio y calidad"
+    }, {
+        "id": 6,
+        "name": "Operación de soluciones"
+    }, {
+        "id": 7,
+        "name": "Gobierno Corporativo"
+    }, {
+        "id": 8,
+        "name": "Gestión financiera y adminsitracion"
+    }]
+}

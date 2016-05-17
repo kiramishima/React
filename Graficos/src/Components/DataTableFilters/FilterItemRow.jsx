@@ -26,7 +26,7 @@ export default class FilterItemRow extends Component {
 
 FilterItemRow.propTypes = {
   Item: React.PropTypes.object.isRequired,
-  UUID: React.PropTypes.string.isRequired,
+  UUID: React.PropTypes.any.isRequired,
   Label: React.PropTypes.string.isRequired,
   onClick: React.PropTypes.func.isRequired
 }

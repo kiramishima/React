@@ -6,11 +6,14 @@ export default class SearchBar extends Component {
     constructor (props) {
       super(props)
       this.displayName = 'SearchBarComponent'
-      this.state = {inputs: null, dtStart: null, dtEnd: null}
-      this.changeHandler = this.changeHandler.bind(this)
+      this.state = {inputs: null, dtStart: '', dtEnd: ''}
+      // this.changeHandler = this.changeHandler.bind(this)
       this.onClickBtnSearch = this.onClickBtnSearch.bind(this)
       this.showDtEndWidget = this.showDtEndWidget.bind(this)
       this.showDtStartWidget = this.showDtStartWidget.bind(this)
+      this.handleDtStartChange = this.handleDtStartChange.bind(this)
+      this.handleDtEndChange = this.handleDtEndChange.bind(this)
+
     }
     showDtStartWidget () {
       if (!this._dtStart.isVisible()) {
@@ -24,21 +27,31 @@ export default class SearchBar extends Component {
     }
     componentDidMount () {
       this._dtStart = new Pikaday({
-        field: document.getElementById('datepicker'),
-        format: 'DD/MM/YYYY'
+        field: this.refs.dtStart,
+        format: 'DD/MM/YYYY',
+        onSelect: this.handleDtStartChange
       })
       this._dtEnd = new Pikaday({
-        field: document.getElementById('datepicker2'),
-        format: 'DD/MM/YYYY'
+        field: this.refs.dtEnd,
+        format: 'DD/MM/YYYY',
+        onSelect: this.handleDtEndChange
       })
       var dt = moment().add(7, 'days').format('MM/DD/YYYY')
       this._dtStart.setDate(moment().format('MM/DD/YYYY'))
       this._dtEnd.setDate(dt)
     }
+    handleDtStartChange (e) {
+      var dt = moment(e).format('DD/MM/YYYY')
+      this.setState({dtStart: dt})
+    }
+    handleDtEndChange (e) {
+      var dt = moment(e).format('DD/MM/YYYY')
+      this.setState({dtEnd: dt})
+    }
     componentDidUpdate () {
       // :-D
     }
-    changeHandler (e) {
+    /* changeHandler (e) {
       if (typeof this.props.onChange === 'function') {
         if (e.target.name === 'dtStart') {
           var dt = moment(this._dtStart.getDate()).add(7, 'days').format('MM/DD/YYYY')
@@ -64,7 +77,7 @@ export default class SearchBar extends Component {
         // his.props.onChange('dtStart', document.querySelector('#datepicker').value)
         // this.props.onChange('dtEnd', document.querySelector('#datepicker2').value)
       }
-    }
+    } */
     onClickBtnSearch (e) {
       if (typeof this.props.onSearch === 'function') {
         this.props.onSearch()
@@ -81,7 +94,7 @@ export default class SearchBar extends Component {
               <ul style={styles}>
                   <li>
                       <div className={"input-group input-group-sm"}>
-                          <input id='datepicker' name='dtStart' onBlur={this.changeHandler} type='text' className={"form-control"} placeholder='DD/MM/YYYY' />
+                          <input ref='dtStart' name='dtStart' value={this.state.dtStart} type='text' className='form-control' placeholder='DD/MM/YYYY' />
                           <span className={"input-group-btn"}>
                               <button className={"btn btn-default"} type='button' onClick={this.showDtStartWidget} >
                               <span className={"glyphicon glyphicon glyphicon-calendar"} aria-hidden='true'></span>
@@ -92,7 +105,7 @@ export default class SearchBar extends Component {
                   <li>&nbsp;</li>
                   <li>
                       <div className='input-group input-group-sm'>
-                          <input id='datepicker2' name='dtEnd' onBlur={this.changeHandler} type='text' className={"form-control"} placeholder='DD/MM/YYYY' />
+                          <input ref='dtEnd' name='dtEnd' value={this.state.dtEnd} type='text' className='form-control' placeholder='DD/MM/YYYY' />
                           <span className='input-group-btn'>
                               <button className='btn btn-default' type='button' onClick={this.showDtEndWidget}>
                               <span className='glyphicon glyphicon glyphicon-calendar' aria-hidden='true'></span>

@@ -27,14 +27,14 @@ function onRender(val) {
       // ReactDOM.render(<DataTableSAR key={"UUID-12"} url={'data.json'} metadata={metadata}/>, document.querySelector('#appContainer'))
       var metadata = [
             {data: "UUID", name: "UUID", label: "Id", hidden: true},
-            {data: "Project", name: "Project", label: "Proyecto", hidden: false},
-            {data: "iDate", name: "iDate", label: "Fh. Registro", hidden: false, render: onRender},
+            {data: "name", name: "Project", label: "Proyecto", hidden: false},
+            {data: "month", name: "iDate", label: "Fh. Registro", hidden: true},
             {data: "dProcesos", name: "dProcesos", label: "Desempeño de procesos", hidden: false, type: "children"},
             {data: "dProductos", name: "dProductos", label: "Desempeño del producto/servicio", hidden: false, type: "children"},
             {data: "sCliente", name: "sCliente", label: " Satisfacion del cliente", hidden: false, type: "children"},
             {data: "dProveedor", name: "dProveedor", label: "Desempeño del proveedor", hidden: false, type: "children"}
       ]
-      ReactDOM.render(<Application key={"UUID-29"} Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
+      ReactDOM.render(<Application key={"UUID-29"} UrlCatalogo='data_cat.json' Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
       
       // let http = await fetch('indicador.json')
       // var mockData = await http.json()

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import FilterItemRow from './FilterItemRow.jsx'
 
 export default class FilterItemList extends Component {
@@ -16,10 +16,7 @@ export default class FilterItemList extends Component {
         _.remove(state, item)
         this.setState({selectedItems: state})
       }
-      this.props.onSelected(state)
-    }
-    componentDidUpdate () {
-      // :-D
+      this.props.SelectedItem(state)
     }
     render () {
       var styles = {
@@ -29,7 +26,7 @@ export default class FilterItemList extends Component {
       }
       var rows = []
       this.props.Items.forEach((item) => {
-        rows.push(<FilterItemRow key={item.UUID} Item={item} onClick={this.onClick} UUID={item.UUID} Label={item.Project} />)
+        rows.push(<FilterItemRow key={item.id} Item={item} onClick={this.onClick} UUID={item.id} Label={item.name} />)
       })
       return (
           <div className='row'>
@@ -44,6 +41,6 @@ export default class FilterItemList extends Component {
 }
 
 FilterItemList.propTypes = {
-  Items: React.PropTypes.array.isRequired,
-  onSelected: React.PropTypes.func.isRequired
+  Items: PropTypes.array.isRequired,
+  SelectedItem: PropTypes.func.isRequired
 }

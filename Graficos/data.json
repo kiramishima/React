@@ -1,391 +1,206 @@
 {
     "draw": 1,
+    "month": {
+        "from": 1,
+        "to": 4
+    },
+    "year": {
+        "from": 2016,
+        "to": 2016
+    },
     "data": [
         {
             "UUID": "89a7cd37-f109-4493-adf3-13e85a66ba7d",
-            "Project": "Demo 1",
-            "iDate": "1459872012897",
+            "name": "Enero 2016",
+            "month": 1,
+            "year": 2016,
             "dProcesos": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño de proceso",
+                "total": 18,
+                "semaphores": [
+                    {"name": "Verde", "total": 5, "semaphore": 1},
+                    {"name": "Amarillo", "total": 15, "semaphore": 2},
+                    {"name": "Rojo", "total": 2, "semaphore": 3}
                 ]
             },
             "dProductos": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño del producto",
+                "total": 20,
+                "semaphores": [
+                    {"name": "Verde", "total": 17, "semaphore": 1},
+                    {"name": "Rojo", "total": 3, "semaphore": 3}
                 ]
             },
             "sCliente": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Satisfacción del cliente",
+                "total": 30,
+                "semaphores": [
+                    {"name": "Verde", "total": 22, "semaphore": 1},
+                    {"name": "Amarillo", "total": 1, "semaphore": 2},
+                    {"name": "Rojo", "total": 7, "semaphore": 3}
                 ]
             },
             "dProveedor": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño del proveedor",
+                "total": 16,
+                "semaphores": [
+                    {"name": "Amarillo", "total": 16, "semaphore": 2}
                 ]
             }
         },
         {
-            "UUID": "a746115c-46cd-47da-ae80-3f16d50f81b5",
-            "Project": "Demo 2",
-            "iDate": "1459872012897",
+            "UUID": "89a7cd37-f110-4493-adf3-13e85a66ba7d",
+            "name": "Febrero 2016",
+            "month": 2,
+            "year": 2016,
             "dProcesos": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño de proceso",
+                "total": 20,
+                "semaphores": [
+                    {"name": "Verde", "total": 17, "semaphore": 1},
+                    {"name": "Rojo", "total": 3, "semaphore": 3}
                 ]
             },
             "dProductos": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño del producto",
+                "total": 16,
+                "semaphores": [
+                    {"name": "Amarillo", "total": 16, "semaphore": 2}
                 ]
             },
             "sCliente": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Satisfacción del cliente",
+                "total": 18,
+                "semaphores": [
+                    {"name": "Verde", "total": 5, "semaphore": 1},
+                    {"name": "Amarillo", "total": 15, "semaphore": 2},
+                    {"name": "Rojo", "total": 2, "semaphore": 3}
                 ]
             },
             "dProveedor": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño del proveedor",
+                "total": 30,
+                "semaphores": [
+                    {"name": "Verde", "total": 22, "semaphore": 1},
+                    {"name": "Amarillo", "total": 1, "semaphore": 2},
+                    {"name": "Rojo", "total": 7, "semaphore": 3}
                 ]
             }
         },
         {
-            "UUID": "06bad80a-e1cb-434e-ae17-eeae6933d8dd",
-            "Project": "Demo 3",
-            "iDate": "1459872012897",
+            "UUID": "89a7cd37-f111-4493-adf3-13e85a66ba7d",
+            "name": "Marzo 2016",
+            "month": 3,
+            "year": 2016,
             "dProcesos": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño de proceso",
+                "total": 20,
+                "semaphores": [
+                    {"name": "Verde", "total": 17, "semaphore": 1},
+                    {"name": "Rojo", "total": 3, "semaphore": 3}
                 ]
             },
             "dProductos": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño del producto",
+                "total": 16,
+                "semaphores": [
+                    {"name": "Amarillo", "total": 16, "semaphore": 2}
                 ]
             },
             "sCliente": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Satisfacción del cliente",
+                "total": 18,
+                "semaphores": [
+                    {"name": "Verde", "total": 5, "semaphore": 1},
+                    {"name": "Amarillo", "total": 15, "semaphore": 2},
+                    {"name": "Rojo", "total": 2, "semaphore": 3}
                 ]
             },
             "dProveedor": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño del proveedor",
+                "total": 30,
+                "semaphores": [
+                    {"name": "Verde", "total": 22, "semaphore": 1},
+                    {"name": "Amarillo", "total": 1, "semaphore": 2},
+                    {"name": "Rojo", "total": 7, "semaphore": 3}
                 ]
             }
         },
         {
-            "UUID": "06bad80a-e1cb-434e-ae28-eeae6933d8dd",
-            "Project": "Demo 4",
-            "iDate": "1459872012897",
+            "UUID": "89a7cd37-f112-4493-adf3-13e85a66ba7d",
+            "name": "Abril 2016",
+            "month": 4,
+            "year": 2016,
             "dProcesos": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño de proceso",
+                "total": 30,
+                "semaphores": [
+                    {"name": "Verde", "total": 22, "semaphore": 1},
+                    {"name": "Amarillo", "total": 1, "semaphore": 2},
+                    {"name": "Rojo", "total": 7, "semaphore": 3}
                 ]
             },
             "dProductos": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño del producto",
+                "total": 20,
+                "semaphores": [
+                    {"name": "Verde", "total": 17, "semaphore": 1},
+                    {"name": "Rojo", "total": 3, "semaphore": 3}
                 ]
             },
             "sCliente": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Satisfacción del cliente",
+                "total": 18,
+                "semaphores": [
+                    {"name": "Verde", "total": 5, "semaphore": 1},
+                    {"name": "Amarillo", "total": 15, "semaphore": 2},
+                    {"name": "Rojo", "total": 2, "semaphore": 3}
                 ]
             },
             "dProveedor": {
-                "children": [
-                    {
-                        "name": "Analitycs",
-                        "children": [
-                            {
-                                "name": "Clusters",
-                                "children": [
-                                    {"name": "Processors", "total": 3954},
-                                    {"name": "Memory", "total": 5969}
-                                ]
-                            },
-                            {
-                                "name": "Langs",
-                                "children": [
-                                    {"name": "Elixir", "total": 7840},
-                                    {"name": "Go", "total": 5914}
-                                ]
-                            }
-                        ]
-                    }
+                "name": "Desempeño del proveedor",
+                "total": 16,
+                "semaphores": [
+                    {"name": "Amarillo", "total": 16, "semaphore": 2}
+                ]
+            }
+        },
+        {
+            "UUID": "89a7cd37-f109-4493-adf3-13e85a66ba7d",
+            "name": "Enero 2016",
+            "month": 1,
+            "year": 2016,
+            "dProcesos": {
+                "name": "Desempeño de proceso",
+                "total": 16,
+                "semaphores": [
+                    {"name": "Amarillo", "total": 16, "semaphore": 2}
+                ]
+            },
+            "dProductos": {
+                "name": "Desempeño del producto",
+                "total": 18,
+                "semaphores": [
+                    {"name": "Verde", "total": 5, "semaphore": 1},
+                    {"name": "Amarillo", "total": 15, "semaphore": 2},
+                    {"name": "Rojo", "total": 2, "semaphore": 3}
+                ]
+            },
+            "sCliente": {
+                "name": "Satisfacción del cliente",
+                "total": 20,
+                "semaphores": [
+                    {"name": "Verde", "total": 17, "semaphore": 1},
+                    {"name": "Rojo", "total": 3, "semaphore": 3}
+                ]
+            },
+            "dProveedor": {
+                "name": "Desempeño del proveedor",
+                "total": 30,
+                "semaphores": [
+                    {"name": "Verde", "total": 22, "semaphore": 1},
+                    {"name": "Amarillo", "total": 1, "semaphore": 2},
+                    {"name": "Rojo", "total": 7, "semaphore": 3}
                 ]
             }
         }
