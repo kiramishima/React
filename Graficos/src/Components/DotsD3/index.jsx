@@ -8,14 +8,20 @@ class DotsD3 extends Component {
     this.state = {data: {}}
   }
   componentDidMount () {
-    this.svg = new SVGDots({
-      target: this.refs.rowSVG,
-      key: this.props.Property,
-      data: this.props.Data,
-      margin: this.props.Margin,
-      diameter: this.props.Diameter,
-      format: this.props.Format
-    })
+    switch (this.props.Type) {
+      case 'Children':
+        this.svg = new SVGDots({
+          target: this.refs.rowSVG,
+          key: this.props.Property,
+          data: this.props.Data,
+          margin: this.props.Margin,
+          diameter: this.props.Diameter,
+          format: this.props.Format
+        })
+        break
+      case 'Semaphore':
+        break
+    }
   }
   render () {
     return (
@@ -33,14 +39,16 @@ DotsD3.propTypes = {
   Diameter: React.PropTypes.number,
   Format: React.PropTypes.any,
   Color: React.PropTypes.any,
-  Property: PropTypes.any
+  Property: PropTypes.any,
+  Type: PropTypes.string
 }
 
 DotsD3.defaultProps = {
   Margin: 20,
   Diameter: 70,
   Format: d3.format(',d'),
-  Data: {}
+  Data: {},
+  Type: 'Children'
 }
 
 export default DotsD3
