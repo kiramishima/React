@@ -24,11 +24,13 @@ export default class ItemRow extends Component {
           props.style = style // {'color': 'red'}
           // props.style.display = _.hasIn(stack, 'hidden') ? '' : 'none'
           if (_.hasIn(stack, 'type') && stack.type === 'children') {
+            // console.log('T', semaphores)
             var dataset = this.props.Item[key]
             props.content = <DotsD3 key={'SVG_' + this.props.Item.UUID} Data={dataset} Property={key}/>
           } else if (_.hasIn(stack, 'type') && stack.type === 'semaphore') {
             var semaphores = this.props.Item[key].semaphores
-            console.log('T', semaphores)
+            // console.log('T', semaphores)
+            props.content = <DotsD3 Type='Semaphore' Data={semaphores} Property={key}/>
           } else {
             props.content = _.hasIn(stack, 'render') ? stack.render(this.props.Item[key]) : this.props.Item[key]
           }

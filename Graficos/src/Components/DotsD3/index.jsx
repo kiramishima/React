@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import d3 from 'd3'
 import SVGDots from './Dots/index.jsx'
+import SVGSemaphore from './Dots/semaphore.jsx'
 
 class DotsD3 extends Component {
   constructor (props) {
@@ -8,6 +9,7 @@ class DotsD3 extends Component {
     this.state = {data: {}}
   }
   componentDidMount () {
+    console.log(this.props.Type)
     switch (this.props.Type) {
       case 'Children':
         this.svg = new SVGDots({
@@ -20,6 +22,13 @@ class DotsD3 extends Component {
         })
         break
       case 'Semaphore':
+        this.svg = new SVGSemaphore({
+          target: this.refs.rowSVG,
+          key: this.props.Property,
+          data: this.props.Data,
+          margin: this.props.Margin,
+          diameter: this.props.Diameter
+        })
         break
     }
   }

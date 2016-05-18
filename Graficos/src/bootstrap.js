@@ -30,9 +30,9 @@ function onRender(val) {
             {data: "name", name: "Project", label: "Proyecto", hidden: false},
             {data: "month", name: "iDate", label: "Fh. Registro", hidden: true},
             {data: "dProcesos", name: "dProcesos", label: "Desempeño de procesos", hidden: false, type: "semaphore"},
-            {data: "dProductos", name: "dProductos", label: "Desempeño del producto/servicio", hidden: false, type: "children"},
-            {data: "sCliente", name: "sCliente", label: " Satisfacion del cliente", hidden: false, type: "children"},
-            {data: "dProveedor", name: "dProveedor", label: "Desempeño del proveedor", hidden: false, type: "children"}
+            {data: "dProductos", name: "dProductos", label: "Desempeño del producto/servicio", hidden: false, type: "semaphore"},
+            {data: "sCliente", name: "sCliente", label: " Satisfacion del cliente", hidden: false, type: "semaphore"},
+            {data: "dProveedor", name: "dProveedor", label: "Desempeño del proveedor", hidden: false, type: "semaphore"}
       ]
       ReactDOM.render(<Application key={"UUID-29"} UrlCatalogo='data_cat.json' Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
       

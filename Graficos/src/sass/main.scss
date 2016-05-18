@@ -3,13 +3,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~pikaday/scss/pikaday';
 @import "./DotsD3_Container.scss";
 
-.success_circle, .status_Verde_circle {
+.success_circle, .status_Verde_circle, .circle_Verde {
     fill: green
 }
-.error_circle, .status_Rojo_circle {
+.error_circle, .status_Rojo_circle, .circle_Rojo {
     fill: red
 }
-.warning_circle {
+.warning_circle, .circle_Amarillo {
     fill: yellow
 }
 .success_circle:hover {
@@ -23,4 +23,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .warning_circle:hover {
     stroke: #000;
     stroke-width: 1.5px;
+}
+
+.DotsD3_Container {
+	height: 50px;
+    width: 100px;
 }

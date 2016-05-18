@@ -11,7 +11,7 @@ class SVGDots {
     Object.assign(this, config)
   }
   init () {
-    console.log('Initialize', this)
+    // console.log('Initialize', this)
     // JSON Data
     var root = this.data
     // Colors from D3
@@ -23,7 +23,7 @@ class SVGDots {
     var pack = d3.layout.pack()
     // .children(function(d) {  return d.children1})
     .size([this.diameter - 4, this.diameter - 4])
-    .value(function (d) { console.log(d); return d.total })
+    .value(function (d) { return d.total })
     // SVG D3 Ref Element
     this.chart = d3.select(this.target)
     .attr('width', this.diameter)
@@ -42,7 +42,7 @@ class SVGDots {
       .data(nodes)
       .enter().append('circle')
         .attr('class', function (d) { return d.parent ? d.children ? 'node' : 'node node--leaf' : 'node node--root' })
-        .style('fill', function (d) { console.log('svg.circle.style', d); return d.children ? color(d.depth) : null })
+        .style('fill', function (d) { return d.children ? color(d.depth) : null })
         .on('click', function (d) {
           ((data) => {
             console.log('data', data)
