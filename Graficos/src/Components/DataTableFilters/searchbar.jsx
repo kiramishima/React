@@ -80,7 +80,7 @@ export default class SearchBar extends Component {
     } */
     onClickBtnSearch (e) {
       if (typeof this.props.onSearch === 'function') {
-        this.props.onSearch()
+        this.props.onSearch(this.state.dtStart, this.state.dtEnd)
       }
     }
     render () {

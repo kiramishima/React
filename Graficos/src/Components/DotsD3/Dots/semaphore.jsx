@@ -1,4 +1,5 @@
 import d3 from 'd3'
+import qs from 'qs'
 
 class SVGSemaphore {
     constructor (config) {
@@ -10,7 +11,8 @@ class SVGSemaphore {
     }
     init () {
       console.log('Initialize', this)
-			this._svg = d3.select(this.target)
+       var query = this.query
+		this._svg = d3.select(this.target)
 	    .attr('width', 120)
 	    .attr('height', 60)
 	    // .append('g')
@@ -27,7 +29,9 @@ class SVGSemaphore {
 	    .attr('cx', function (d, i) { return i * 25 + 30 })
 	    .attr('r', function (d) { return d.total })
 			.on('click', function (d) {
-				console.log('Circle', d)
+				query.semaphore = d.semaphore
+				window.open(`url?${qs.stringify(query)}`)
+				// console.log('Circle', d, query)
 			})
     }
 }

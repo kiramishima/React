@@ -1,6 +1,7 @@
 // Carga React :P
 require('babel-polyfill')
-import './sass/Indicadores_Graficos.scss'
+// import './sass/Indicadores_Graficos.scss'
+import './sass/main.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash'
@@ -8,8 +9,9 @@ import _ from 'lodash'
 // import bootstrap from 'bootstrap-sass'
 import d3 from 'd3'
 import moment from 'moment'
-import Application from './Components/Application/App.jsx'
+// import Application from './Components/Application/App.jsx'
 // import GraphIndicadorApp from './Components/IndicadoresGraficos/index.jsx'
+import IndicadorInfo from './Components/IndicadorInfo/index.jsx'
 
 function onRender(val) {
     
@@ -25,7 +27,7 @@ function onRender(val) {
       // console.log('ES7 Async+fetch/data >>>', parsedData)
       // buildHeader(parsedData.data)
       // ReactDOM.render(<DataTableSAR key={"UUID-12"} url={'data.json'} metadata={metadata}/>, document.querySelector('#appContainer'))
-      var metadata = [
+      /*var metadata = [
             {data: "UUID", name: "UUID", label: "Id", hidden: true},
             {data: "name", name: "Project", label: "Proyecto", hidden: false},
             {data: "month", name: "iDate", label: "Fh. Registro", hidden: true},
@@ -35,11 +37,12 @@ function onRender(val) {
             {data: "dProveedor", name: "dProveedor", label: "Desempeño del proveedor", hidden: false, type: "semaphore"}
       ]
       ReactDOM.render(<Application key={"UUID-29"} UrlCatalogo='data_cat.json' Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
+      */
+      // Recibimos los parametros del otro tablero
+      let http = await fetch('process.json')
+      var mockData = await http.json()
       
-      // let http = await fetch('indicador.json')
-      // var mockData = await http.json()
-      
-      // ReactDOM.render(<IndicadorInfo key={"UUID-78"} Data={mockData.indicadores} />, document.querySelector('#pruebas'))
+      ReactDOM.render(<IndicadorInfo key={"UUID-78"} Data={mockData.process} />, document.querySelector('#pruebas'))
       var DataDefinition = [
             {data: "UUID", label: "Id", hidden: true},
             {data: "service_name", label: "Servicio", hidden: false},

@@ -12,7 +12,8 @@ class IndicadorItem extends Component {
         return [<ItemStatus key={activitie.year} Data={activitie} />, activitie.months.map((m, i) => <ItemInfo key={`${activitie.year} ${m.month}`} Status={m.status} Year={activitie.year} Month={m.month} Time={m.time} />)]
       })
       return (
-        <div className='col-md-12'>
+        <div className='row'>
+            <div className='col-md-12'>
                 <h4>{this.props.ItemData.indicador}</h4>
                 <div className='row'>
                     <div className='col-sm-6'>
@@ -41,6 +42,7 @@ class IndicadorItem extends Component {
                     </div>
                 </div>
             </div>
+        </div>
       )
     }
 }

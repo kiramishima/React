@@ -27,7 +27,8 @@ class DotsD3 extends Component {
           key: this.props.Property,
           data: this.props.Data,
           margin: this.props.Margin,
-          diameter: this.props.Diameter
+          diameter: this.props.Diameter,
+          query: this.props.Query
         })
         break
     }
@@ -46,7 +47,8 @@ DotsD3.propTypes = {
   Format: React.PropTypes.any,
   Color: React.PropTypes.any,
   Property: PropTypes.any,
-  Type: PropTypes.string
+  Type: PropTypes.string,
+  Query: PropTypes.any
 }
 
 DotsD3.defaultProps = {
@@ -54,7 +56,8 @@ DotsD3.defaultProps = {
   Diameter: 70,
   Format: d3.format(',d'),
   Data: {},
-  Type: 'Children'
+  Type: 'Children',
+  Query: ''
 }
 
 export default DotsD3

@@ -54,9 +54,7 @@ class Application extends Component {
         var props = {
             Metadata: this.props.Metadata,
             Data: linkData.value,
-            QuerySelected: this.state.selectedItems,
-            QueryDtStart: this.state.dtStart,
-            QueryDtEnd: this.state.dtEnd
+            Query: {"selectedItems": this.state.selectedItems, "dtStart": this.state.dtStart, "dtEnd": this.state.dtEnd}
         }
         dt = <DataTableSAR key={"UUID-12"} {...props}/>
       }

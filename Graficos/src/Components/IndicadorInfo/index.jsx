@@ -12,12 +12,15 @@ class IndicadorInfo extends Component {
         // })
     }
     render () {
+      console.log(this.props.Data.map((item) => item))
       return (
           <div className='row'>
-            <h3>Historico Mensual</h3>
-            {
-                this.props.Data.map((item) => <IndicadorItem key={JSON.stringify(item)} ItemData={item}/>)
-            }
+            <div className='col-md-12'>
+              <h3>Historico Mensual</h3>
+              {
+                  // this.props.Data.indicators.map((item) =>  <IndicadorItem key={JSON.stringify(item)} ItemData={item}/>)
+              }
+            </div>
           </div>
       )
     }
@@ -25,6 +28,10 @@ class IndicadorInfo extends Component {
 
 IndicadorInfo.propTypes = {
   Data: PropTypes.array
+}
+
+IndicadorInfo.defaultProps = {
+  Data: []
 }
 
 export default IndicadorInfo

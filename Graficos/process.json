@@ -1,0 +1,68 @@
+{
+    "status": "ok",
+    "process": [
+        {
+            "name": "nombre del proceso 1",
+            "indicators": [
+                {
+                    "name": "Desempeño del proceso",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id quo quam dolorum, necessitatibus laudantium, et temporibus nihil facere officiis labore fugit quisquam ipsa, repellat amet. Vitae harum soluta ab.",
+                    "metas": [
+                        {
+                            "year": 2015,
+                            "month": 1,
+                            "month_name": "Enero",
+                            "ranks": [
+                                { "description": "=> 11 y <= 20", "semaphore": 1, "color": "#00FF00" },
+                                { "description": "=> 31 ", "semaphore": 2, "color": "#FFFF00" },
+                                { "description": "=> 21 y <= 30", "semaphore": 3, "color": "#FF0000" }
+                            ],
+                            "months": [
+                                {"month": "Septiembre", "year": 2015, "value": "15", "semaphore": "1", "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id quo quam dolorum, necessitatibus laudantium, et temporibus nihil facere officiis labore fugit quisquam ipsa, repellat amet. Vitae harum soluta ab", "file":""},
+                                {"month": "Octubre", "year": 2015, "value": "23", "semaphore": "3", "comment":"", "file":"archivo1.docx"},
+                                {"month": "Noviembre", "year": 2015, "value": "5", "status": "2", "commentos":"", "file":"archivo2.pdf"}
+                            ]
+                        },
+                        {
+                            "year": 2016,
+                            "month": 1,
+                            "month_name": "Enero",
+                            "ranks": [
+                                { "description": "=> 12 y <= 21", "semaphore": 1, "color": "#00FF00" },
+                                { "description": "=> 32 ", "semaphore": 2, "color": "#FFFF00" },
+                                { "description": "=> 22 y <= 31", "semaphore": 3, "color": "#FF0000" }
+                            ],
+                            "months": [
+                                {"month": "Enero", "year": 2016, "value": "16", "semaphore": "1", "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id quo quam dolorum, necessitatibus laudantium, et temporibus nihil facere officiis labore fugit quisquam ipsa, repellat amet. Vitae harum soluta ab", "file":""},
+                                {"month": "Febrero", "year": 2016, "value": "6", "status": "2", "commentos":"Lorem ipsum dolor sit amet.", "file":"archivo2.pdf"}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Desempeño del proceso 2",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id quo quam dolorum, necessitatibus laudantium, et temporibus nihil facere officiis labore fugit quisquam ipsa, repellat amet. Vitae harum soluta ab.",
+                    "metas": [{
+                        "year": 2015,
+                        "month": 1,
+                        "month_name": "Enero",
+                        "ranks": [
+                            { "description": "=> 51 y <= 60", "semaphore": 1, "color": "#00FF00" },
+                            { "description": "=> 61 ", "semaphore": 2, "color": "#FFFF00" },
+                            { "description": "=> 41 y <= 50", "semaphore": 3, "color": "#FF0000" }
+                        ],
+                        "months": [
+                            {"month": "Septiembre", "year": 2015, "value": "45", "semaphore": "1", "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id quo quam dolorum, necessitatibus laudantium, et temporibus nihil facere officiis labore fugit quisquam ipsa, repellat amet. Vitae harum soluta ab", "file":""},
+                            {"month": "Octubre", "year": 2015, "value": "63", "semaphore": "3", "comment":"", "file":"archivo1.docx"},
+                            {"month": "Noviembre", "year": 2015, "value": "55", "status": "2", "commentos":"Lorem ipsum dolor sit amet.", "file":"archivo2.pdf"},
+                            {"month": "Diciembre", "year": 2015, "value": "60", "semaphore": "3", "comment":"", "file":"archivo4.docx"},
+                            {"month": "Enero", "year": 2016, "value": "64", "semaphore": "3", "comment":"", "file":"archivo5.xlsx"}
+                        ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+
+}

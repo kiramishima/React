@@ -30,7 +30,7 @@ export default class ItemRow extends Component {
           } else if (_.hasIn(stack, 'type') && stack.type === 'semaphore') {
             var semaphores = this.props.Item[key].semaphores
             // console.log('T', semaphores)
-            props.content = <DotsD3 Type='Semaphore' Data={semaphores} Property={key}/>
+            props.content = <DotsD3 Query={this.props.Query} Type='Semaphore' Data={semaphores} Property={key}/>
           } else {
             props.content = _.hasIn(stack, 'render') ? stack.render(this.props.Item[key]) : this.props.Item[key]
           }
@@ -48,7 +48,8 @@ export default class ItemRow extends Component {
 
 ItemRow.propTypes = {
   Metadata: React.PropTypes.array.isRequired,
-  Item: React.PropTypes.object.isRequired
+  Item: React.PropTypes.object.isRequired,
+  Query: React.PropTypes.any
 }
 
 /* ItemRow.defaultProps = {

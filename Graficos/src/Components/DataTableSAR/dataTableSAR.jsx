@@ -83,7 +83,7 @@ class DataTableSAR extends Component {
                    {headers}
                 </tr>
             </thead>
-            <DataTableBody key='UUID-10' Data={linkData.value} Metadata={this.props.Metadata}/>
+            <DataTableBody key='UUID-10' Query={this.props.Query} Data={linkData.value} Metadata={this.props.Metadata}/>
           </table>
       )
     }
@@ -95,13 +95,14 @@ DataTableSAR.propTypes = {
   tbClass: React.PropTypes.string,
   tbdClass: React.PropTypes.string,
   Data: React.PropTypes.array,
-  QuerySelected
+  Query: React.PropTypes.any,
 }
 
 DataTableSAR.defaultProps = {
   tbClass: 'table table-bordered table-striped',
   tbdClass: 'table-hover',
-  Data: []
+  Data: [],
+  Query: {}
 }
 
 export default DataTableSAR
