@@ -9,10 +9,10 @@ class SVGSemaphore {
       Object.assign(this, config)
     }
     init () {
-    	console.log('Initialize', this)
-	    this._svg = d3.select(this.target)
-	    .attr('width', 50)
-	    .attr('height', 100)
+      console.log('Initialize', this)
+			this._svg = d3.select(this.target)
+	    .attr('width', 120)
+	    .attr('height', 60)
 	    // .append('g')
 	    // .attr('transform', 'translate(' + this.diameter / 2 + ',' + this.diameter / 2 + ')')
 
@@ -20,12 +20,15 @@ class SVGSemaphore {
 	    .data(this.data)
 	    .enter()
 	    .append('circle')
-	      .attr('class', function (d) {
-	      	 return `circle_${d.name}`
-	      })
-	      .attr("cy", 15)
-	      .attr("cx", function(d, i) { return i * 100 + 30 })
-	      .attr("r", function(d) { return 12.5 })
+	    .attr('class', function (d) {
+	      return `circle_${d.name}`
+	    })
+	    .attr('cy', 30)
+	    .attr('cx', function (d, i) { return i * 25 + 30 })
+	    .attr('r', function (d) { return d.total })
+			.on('click', function (d) {
+				console.log('Circle', d)
+			})
     }
 }
 

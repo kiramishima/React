@@ -4,13 +4,16 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import "./DotsD3_Container.scss";
 
 .success_circle, .status_Verde_circle, .circle_Verde {
-    fill: green
+    fill: green;
+    cursor: pointer;
 }
 .error_circle, .status_Rojo_circle, .circle_Rojo {
-    fill: red
+    fill: red;
+    cursor: pointer;
 }
 .warning_circle, .circle_Amarillo {
-    fill: yellow
+    fill: yellow;
+    cursor: pointer;
 }
 .success_circle:hover {
     stroke: #000;

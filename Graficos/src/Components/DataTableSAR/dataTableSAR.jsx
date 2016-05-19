@@ -94,7 +94,8 @@ DataTableSAR.propTypes = {
   Metadata: React.PropTypes.array.isRequired,
   tbClass: React.PropTypes.string,
   tbdClass: React.PropTypes.string,
-  Data: React.PropTypes.array
+  Data: React.PropTypes.array,
+  QuerySelected
 }
 
 DataTableSAR.defaultProps = {

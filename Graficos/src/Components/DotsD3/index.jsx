@@ -34,10 +34,7 @@ class DotsD3 extends Component {
   }
   render () {
     return (
-      <div className={"DotsD3_Container"}>
-         <svg ref='rowSVG' >
-         </svg>
-      </div>
+      <svg ref='rowSVG'></svg>
     )
   }
 }
