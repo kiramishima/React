@@ -18,7 +18,7 @@ class IndicadorInfo extends Component {
             <div className='col-md-12'>
               <h3>Historico Mensual</h3>
               {
-                  // this.props.Data.indicators.map((item) =>  <IndicadorItem key={JSON.stringify(item)} ItemData={item}/>)
+                  this.props.Data.map((item) =>  <IndicadorItem key={JSON.stringify(item)} ItemData={item.indicators}/>)
               }
             </div>
           </div>

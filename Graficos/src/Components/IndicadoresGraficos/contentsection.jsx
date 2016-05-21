@@ -14,7 +14,7 @@ class ContentSection extends Component {
 		if (nextProps.Data.length > 0) {
 			// de 1 elemento definiremos cuantas columnas crearemos.
 			var item = nextProps.Data[0]
-			var oCols = item.Schedule.map((item) => { return {"header": `${item.Month} ${item.Year}`}})
+			var oCols = item.months.map((item) => { return {"header": `${item.month} ${item.year}`}})
 			dtf = [{"header": "Proceso"}, ...oCols]
 			console.log('cols', dtf)
 		}
@@ -24,7 +24,7 @@ class ContentSection extends Component {
 		if (nextProps.Data.length > 0) {
 			var items = nextProps.Data
 			body = items.map((item) => {
-				var res = [item.Proceso, ...item.Schedule.map((schedule) => { return schedule.Value })]
+				var res = [item.process, ...item.months.map((schedule) => { return schedule.value })]
 				return res
 			})
 		}
@@ -35,7 +35,7 @@ class ContentSection extends Component {
 		if (this.props.Data.length > 0) {
 			// de 1 elemento definiremos cuantas columnas crearemos.
 			var item = this.props.Data[0]
-			var oCols = item.Schedule.map((item) => { return {"header": `${item.Month} ${item.Year}`}})
+			var oCols = item.months.map((item) => { return {"header": `${item.month} ${item.year}`}})
 			dtf = [{"header": "Proceso"}, ...oCols]
 			console.log('cols', dtf)
 		}
@@ -44,7 +44,7 @@ class ContentSection extends Component {
 		if (this.props.Data.length > 0) {
 			var items = this.props.Data
 			body = items.map((item) => {
-				var res = [item.Proceso, ...item.Schedule.map((schedule) => { return schedule.Value })]
+				var res = [item.process, ...item.months.map((schedule) => { return schedule.value })]
 				return res
 			})
 		}

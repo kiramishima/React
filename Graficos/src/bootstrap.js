@@ -19,7 +19,7 @@ function onRender(val) {
     return dt
 }
 
-
+ 
 (async () => {
     try {
       // let data = await fetch('data.json')
@@ -42,7 +42,7 @@ function onRender(val) {
       let http = await fetch('process.json')
       var mockData = await http.json()
       
-      ReactDOM.render(<IndicadorInfo key={"UUID-78"} Data={mockData.process} />, document.querySelector('#pruebas'))
+      ReactDOM.render(<IndicadorInfo key={"UUID-78"} Data={mockData.process} />, document.querySelector('#appContainer'))
       var DataDefinition = [
             {data: "UUID", label: "Id", hidden: true},
             {data: "service_name", label: "Servicio", hidden: false},
@@ -55,7 +55,7 @@ function onRender(val) {
       // var tendenciaMock = await http2.json()
       // let urlTendencias = 'tendencia.json'
       // ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
-      // ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='info.json' UrlIndicadores='categorias.json'/>, document.querySelector('#pruebas'))
+      // ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='info.json' UrlIndicadores='categorias.json'/>, document.querySelector('#appContainer'))
     } catch(error) {
         console.log(error)
     }

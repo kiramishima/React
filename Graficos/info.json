@@ -2,29 +2,29 @@
 	"status": 200,
 	"data": [
 		{
-			"Proceso": "Seleccionado 1",
-			"Schedule": [
-				{"Month": "Octubre", "Year": "2015", "Value": "85"},
-				{"Month": "Noviembre", "Year": "2015", "Value": "95"},
-				{"Month": "Diciembre", "Year": "2015", "Value": "55"},
-				{"Month": "Enero", "Year": "2016", "Value": "41"},
-				{"Month": "Febrero", "Year": "2016", "Value": "22"},
-				{"Month": "Marzo", "Year": "2016", "Value": "5"},
-				{"Month": "Abril", "Year": "2016", "Value": "15"},
-				{"Month": "Mayo", "Year": "2016", "Value": "35"}
+			"process": "Seleccionado 1",
+			"months": [
+				{"month": "Octubre", "year": "2015", "value": "85"},
+				{"month": "Noviembre", "year": "2015", "value": "95"},
+				{"month": "Diciembre", "year": "2015", "value": "55"},
+				{"month": "Enero", "year": "2016", "value": "41"},
+				{"month": "Febrero", "year": "2016", "value": "22"},
+				{"month": "Marzo", "year": "2016", "value": "5"},
+				{"month": "Abril", "year": "2016", "value": "15"},
+				{"month": "Mayo", "year": "2016", "value": "35"}
 			]
 		},
 		{
-			"Proceso": "Seleccionado 2",
-			"Schedule": [
-				{"Month": "Octubre", "Year": "2015", "Value": "65"},
-				{"Month": "Noviembre", "Year": "2015", "Value": "55"},
-				{"Month": "Diciembre", "Year": "2015", "Value": "35"},
-				{"Month": "Enero", "Year": "2016", "Value": "15"},
-				{"Month": "Febrero", "Year": "2016", "Value": "45"},
-				{"Month": "Marzo", "Year": "2016", "Value": "75"},
-				{"Month": "Abril", "Year": "2016", "Value": "85"},
-				{"Month": "Mayo", "Year": "2016", "Value": "5"}
+			"process": "Seleccionado 2",
+			"months": [
+				{"month": "Octubre", "year": "2015", "value": "65"},
+				{"month": "Noviembre", "year": "2015", "value": "55"},
+				{"month": "Diciembre", "year": "2015", "value": "35"},
+				{"month": "Enero", "year": "2016", "value": "15"},
+				{"month": "Febrero", "year": "2016", "value": "45"},
+				{"month": "Marzo", "year": "2016", "value": "75"},
+				{"month": "Abril", "year": "2016", "value": "85"},
+				{"month": "Mayo", "year": "2016", "value": "5"}
 			]
 		}
 	]

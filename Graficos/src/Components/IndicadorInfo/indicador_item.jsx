@@ -8,9 +8,10 @@ class IndicadorItem extends Component {
     }
     render () {
       var childs = null
-      childs = this.props.ItemData.activities.map((activitie, indx) => {
+      console.log(this.props.ItemData)
+      /* childs = this.props.ItemData.metas.map((activitie, indx) => {
         return [<ItemStatus key={activitie.year} Data={activitie} />, activitie.months.map((m, i) => <ItemInfo key={`${activitie.year} ${m.month}`} Status={m.status} Year={activitie.year} Month={m.month} Time={m.time} />)]
-      })
+      })*/
       return (
         <div className='row'>
             <div className='col-md-12'>
