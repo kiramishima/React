@@ -9,20 +9,22 @@ class ItemSVG {
     Object.assign(this, config)
   }
   init () {
-    console.log('Initialize ItemSVG', this)
+    // console.log('Initialize ItemSVG', this)
+    var fnDetails = this.fnDetails
     // Creating Circle Status
     this.svg = d3.select(this.target)
     .attr('width', this.diameter)
     .attr('height', this.diameter)
     .append('g')
     .attr('transform', 'translate(' + this.diameter / 2 + ',' + this.diameter / 2 + ')')
-    var className = `${this.color}_circle`
+    var className = `${this.color}`
     this.circles = this.svg.selectAll('circle')
      .data([50])
      .enter()
         .append('circle')
-           .attr('class', function (d) { return className })
+           .attr('fill', function (d) { return className })
            .attr('r', function (d) { return 15 })
+           .on('click', fnDetails)
     var text = this.text
     this.text = this.svg.selectAll('text')
       .data([50])

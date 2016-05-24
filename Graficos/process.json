@@ -19,8 +19,8 @@
                             ],
                             "months": [
                                 {"month": "Septiembre", "year": 2015, "value": "15", "semaphore": "1", "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id quo quam dolorum, necessitatibus laudantium, et temporibus nihil facere officiis labore fugit quisquam ipsa, repellat amet. Vitae harum soluta ab", "file":""},
-                                {"month": "Octubre", "year": 2015, "value": "23", "semaphore": "3", "comment":"", "file":"archivo1.docx"},
-                                {"month": "Noviembre", "year": 2015, "value": "5", "status": "2", "commentos":"", "file":"archivo2.pdf"}
+                                {"month": "Octubre", "year": 2015, "value": "23", "semaphore": "3", "comments":"", "file":"archivo1.docx"},
+                                {"month": "Noviembre", "year": 2015, "value": "5", "semaphore": "2", "comments":"", "file":""}
                             ]
                         },
                         {
@@ -34,7 +34,7 @@
                             ],
                             "months": [
                                 {"month": "Enero", "year": 2016, "value": "16", "semaphore": "1", "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id quo quam dolorum, necessitatibus laudantium, et temporibus nihil facere officiis labore fugit quisquam ipsa, repellat amet. Vitae harum soluta ab", "file":""},
-                                {"month": "Febrero", "year": 2016, "value": "6", "status": "2", "commentos":"Lorem ipsum dolor sit amet.", "file":"archivo2.pdf"}
+                                {"month": "Febrero", "year": 2016, "value": "6", "semaphore": "2", "comments":"Lorem ipsum dolor sit amet.", "file":"archivo2.pdf"}
                             ]
                         }
                     ]
@@ -53,10 +53,10 @@
                         ],
                         "months": [
                             {"month": "Septiembre", "year": 2015, "value": "45", "semaphore": "1", "comments": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro id quo quam dolorum, necessitatibus laudantium, et temporibus nihil facere officiis labore fugit quisquam ipsa, repellat amet. Vitae harum soluta ab", "file":""},
-                            {"month": "Octubre", "year": 2015, "value": "63", "semaphore": "3", "comment":"", "file":"archivo1.docx"},
-                            {"month": "Noviembre", "year": 2015, "value": "55", "status": "2", "commentos":"Lorem ipsum dolor sit amet.", "file":"archivo2.pdf"},
-                            {"month": "Diciembre", "year": 2015, "value": "60", "semaphore": "3", "comment":"", "file":"archivo4.docx"},
-                            {"month": "Enero", "year": 2016, "value": "64", "semaphore": "3", "comment":"", "file":"archivo5.xlsx"}
+                            {"month": "Octubre", "year": 2015, "value": "63", "semaphore": "3", "comments":"", "file":"archivo1.docx"},
+                            {"month": "Noviembre", "year": 2015, "value": "55", "semaphore": "2", "comments":"Lorem ipsum dolor sit amet.", "file":"archivo2.pdf"},
+                            {"month": "Diciembre", "year": 2015, "value": "60", "semaphore": "3", "comments":"", "file":"archivo4.docx"},
+                            {"month": "Enero", "year": 2016, "value": "64", "semaphore": "3", "comments":"", "file":"archivo5.xlsx"}
                         ]
                         }
                     ]

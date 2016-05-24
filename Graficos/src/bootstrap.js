@@ -1,11 +1,12 @@
 // Carga React :P
 require('babel-polyfill')
+require('expose?$!expose?jQuery!jquery')
 // import './sass/Indicadores_Graficos.scss'
 import './sass/main.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash'
-// import $ from 'jquery'
+// import jQuery from 'jquery'
 // import bootstrap from 'bootstrap-sass'
 import d3 from 'd3'
 import moment from 'moment'
