@@ -21,18 +21,18 @@ class FilterSection extends Component {
     		console.log('FilterSection', e)
     	}
 	}
-	_listSearch (cat, subcat, parendId, childId) {
-		if (typeof _.find(this.state.list, {c: parendId, sc: childId}) === 'object') {
+	_listSearch (parendId, subparentId, childId) {
+		if (typeof _.find(this.state.list, {parendId: parendId, subparentId: subparentId, childId: childId}) === 'object') {
 			// quita el elemento
 			var current = this.state.list.filter((item) => {
-				return item.c !== parendId && item.sc !== childId
+				return item.parendId !== parendId && item.subparentId !== subparentId && item.childId !== childId
 			})
-			console.log('current', current)
+			// console.log('current', current)
 			this.setState({list: current})
 		} else {
 			// agrega el elemento
 			var current = [...this.state.list]
-			current.push({c:parendId, sc:childId})
+			current.push({parendId:parendId, subparentId: subparentId, childId:childId})
 			this.setState({list: current})
 		}
 	}
@@ -42,7 +42,7 @@ class FilterSection extends Component {
 				this.setState({loaded: false})
 				var http = await fetch(this.props.UrlIndicadores)
 				var response = await http.json()
-				this.setState({loaded: true, response: response.data})
+				this.setState({loaded: true, response: response.macroprocesos})
 			})()
 		}catch(e){
 			console.log(`Error ${e}`)

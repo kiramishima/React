@@ -36,3 +36,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .hide_comment, .hide_file {
     display: none;
 }
+
+.zebry:nth-child(odd) {
+    background: #EEEEEE;
+}
+
+.zebry:nth-child(even) {
+    background: #ddd;
+}

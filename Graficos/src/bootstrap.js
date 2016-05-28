@@ -6,13 +6,11 @@ import './sass/main.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash'
-// import jQuery from 'jquery'
-// import bootstrap from 'bootstrap-sass'
 import d3 from 'd3'
 import moment from 'moment'
 // import Application from './Components/Application/App.jsx'
-// import GraphIndicadorApp from './Components/IndicadoresGraficos/index.jsx'
-import IndicadorInfo from './Components/IndicadorInfo/index.jsx'
+import GraphIndicadorApp from './Components/IndicadoresGraficos/index.jsx'
+// import IndicadorInfo from './Components/IndicadorInfo/index.jsx'
 
 function onRender(val) {
     
@@ -40,10 +38,10 @@ function onRender(val) {
       ReactDOM.render(<Application key={"UUID-29"} UrlCatalogo='data_cat.json' Url={'data.json'} Metadata={metadata} />, document.querySelector('#appContainer'))
       */
       // Recibimos los parametros del otro tablero
-      let http = await fetch('process.json')
-      var mockData = await http.json()
+      // let http = await fetch('process.json')
+      // var mockData = await http.json()
       
-      ReactDOM.render(<IndicadorInfo key={"UUID-78"} Data={mockData.process} />, document.querySelector('#appContainer'))
+      // ReactDOM.render(<IndicadorInfo key={"UUID-78"} Data={mockData.process} />, document.querySelector('#appContainer'))
       var DataDefinition = [
             {data: "UUID", label: "Id", hidden: true},
             {data: "service_name", label: "Servicio", hidden: false},
@@ -52,11 +50,11 @@ function onRender(val) {
             {data: "value", label: "Valor", hidden: false},
             {data: "status", label: "", hidden: false, type: "svg"}
       ]
-      // let http2 = await fetch('tendencia.json')
-      // var tendenciaMock = await http2.json()
-      // let urlTendencias = 'tendencia.json'
-      // ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
-      // ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='info.json' UrlIndicadores='categorias.json'/>, document.querySelector('#appContainer'))
+      let http2 = await fetch('tendencia.json')
+      var tendenciaMock = await http2.json()
+      let urlTendencias = 'tendencia.json'
+      ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
+      // ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='info.json' UrlIndicadores='macroprocesos.json'/>, document.querySelector('#appContainer'))
     } catch(error) {
         console.log(error)
     }

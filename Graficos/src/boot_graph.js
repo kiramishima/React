@@ -1,4 +1,5 @@
 require('babel-polyfill')
+import './sass/main.scss'
 import './sass/Indicadores_Graficos.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -10,7 +11,7 @@ import GraphIndicadorApp from './Components/IndicadoresGraficos/index.jsx'
 
 (async () => {
     try {
-      ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='info.json' UrlIndicadores='categorias.json'/>, document.querySelector('#appContainer'))
+      ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='info.json' UrlIndicadores='macroprocesos.json'/>, document.querySelector('#appContainer'))
     } catch(error) {
         console.log(error)
     }

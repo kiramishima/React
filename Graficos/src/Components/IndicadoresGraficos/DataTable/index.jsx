@@ -19,8 +19,8 @@ class DataTable extends Component {
 			<div className='row'>
 				<div className='col-sm-12 col-md-12'>
 					<table className={this.props.className}>
-					    <Header DataDefinition={linkHeader}/>
-					    <Body Data={linkBody}/>
+					    <Header key="myHeader" DataDefinition={linkHeader}/>
+					    <Body key="myBody" Data={linkBody}/>
 		            </table>
 				</div>
 			</div>

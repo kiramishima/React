@@ -7,7 +7,7 @@ class ChildrenItem extends Component {
 	}
 	_selected () {
 		if (typeof this.props.Selected === 'function'){
-			this.props.Selected(this.props.Parent, this.props.Text, this.props.ParentId, this.props.Id)
+			this.props.Selected(this.props.ParentId, this.props.SubParentId, this.props.Id)
 		}
 	}
 	render () {
@@ -23,10 +23,48 @@ class ChildrenItem extends Component {
 
 ChildrenItem.propTypes = {
 	ParentId: PropTypes.number,
-	Parent: PropTypes.string,
+	SubParentId: PropTypes.number,
 	Id: PropTypes.number,
 	Text: PropTypes.string,
 	Selected: PropTypes.func
+}
+
+class SubTreeview extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {toggle: false}
+		this._toggle = this._toggle.bind(this)
+		this._selected = this._selected.bind(this)
+	}
+	_toggle () {
+		this.setState({toggle: !this.state.toggle})
+	}
+	_selected (parendId, subparentId, childId) {
+		if (typeof this.props.Selected === 'function'){
+			this.props.Selected(parendId, subparentId, childId)
+		}
+	}
+	render () {
+		return (
+		<li>
+			<div onClick={this._toggle}>
+		   		{this.state.toggle ? <i className='glyphicon glyphicon-minus'></i> : <i className='glyphicon glyphicon-plus'></i>}
+		   		{this.props.Text}
+		   </div>
+		   <ul style={{display: this.state.toggle ? '' : 'none'}}>
+		      {this.props.Procesos.map((child) => <ChildrenItem key={`${this.props.ParentID}-${this.props.Id}-${child.id}`} ParentId={this.props.ParentId} SubParentId={this.props.Id} Id={child.id} Text={child.name} Selected={this._selected}/>)}
+		   </ul>
+	    </li>
+	    )
+	}
+}
+
+SubTreeview.propTypes = {
+	ParentId: PropTypes.number,
+	Id: PropTypes.number,
+	Text: PropTypes.string,
+	Selected: PropTypes.func,
+	Procesos: PropTypes.any
 }
 
 class TreeviewItem extends Component {
@@ -39,9 +77,9 @@ class TreeviewItem extends Component {
 	_toggle () {
 		this.setState({toggle: !this.state.toggle})
 	}
-	_selected (cat, subcat, parendId, childId) {
+	_selected (parendId, subparentId, childId) {
 		if (typeof this.props.Selected === 'function'){
-			this.props.Selected(cat, subcat, parendId, childId)
+			this.props.Selected(parendId, subparentId, childId)
 		}
 	}
 	render () {
@@ -52,7 +90,7 @@ class TreeviewItem extends Component {
 			   		{this.props.Parent}
 			   </div>
 			   <ul style={{display: this.state.toggle ? '' : 'none'}}>
-			      {this.props.Childrens.map((child) => <ChildrenItem key={`${this.props.ParentID}-${child.scat_id}`} Parent={this.props.Parent} ParentId={this.props.ParentID} Id={child.scat_id} Text={child.subcategory} Selected={this._selected}/>)}
+			      {this.props.Childrens.map((child) => <SubTreeview key={`${this.props.ParentID}-${child.id}`} Procesos={child.procesos} ParentId={this.props.ParentID} Id={child.id} Text={child.name} Selected={this._selected}/>)}
 			   </ul>
 			</li>
 		)

@@ -14,6 +14,7 @@ class GraphIndicadorApp extends React.Component {
 	        (async () => {
 	        	this.setState({loaded: false})
 	        	// TODO inyectar el listado en la consulta
+	        	console.log(arguments)
                 let data = await fetch(this.props.Url)
       			var response = await data.json()
       			this.setState({loaded: true, query: response.data})

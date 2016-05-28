@@ -22,7 +22,7 @@ class ItemRow extends Component {
   }
   _createElements () {
     return this.props.Data.map((item, index) => {
-      return <Item Text={item}/>
+      return <Item key={`${index}_${item}`} Text={item}/>
     })
   }
   render () {

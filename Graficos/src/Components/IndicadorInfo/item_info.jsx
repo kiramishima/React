@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import ItemSVG from './item_svg.jsx'
 import noty from 'noty'
-import downloader from 'file-downloader'
 
 class ItemInfo extends Component {
   constructor (props) {
@@ -34,17 +33,14 @@ class ItemInfo extends Component {
   })
   }
   downloadFile () {
-    downloader.get("http://jqueryfiledownload.apphb.com/FileDownload/DownloadReport/0")
-    .then(function (filename) {
-      console.log("File " + filename + " has been downloaded!");
-    })
+    window.open(this.props.File, '_blank')
   }
   showComments () {
     jQuery(this.refs.myModal).modal('toggle')
   }
   render () {
     return (
-      <div className='row'>
+      <div className='row zebry'>
         <div className='col-xs-4 col-sm-4'>
            {`${this.props.Month} ${this.props.Year}`}
         </div>

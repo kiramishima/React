@@ -52,8 +52,8 @@ class ContentSection extends Component {
 	}
 	render () {
 		// var linkData = this.linkState('body')
-		console.log(this.state.headers)
-		console.log(this.state.body)
+		// console.log(this.state.headers)
+		// console.log(this.state.body)
 		return (
 			<div className='col-sm-8 col-md-8'>
 				<DataTable HeaderDefinition={this.state.headers} Data={this.state.body}/>

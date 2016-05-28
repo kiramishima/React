@@ -1,0 +1,112 @@
+{    
+    "macroprocesos": [
+        {
+            "id": 1,
+            "name": "Atención a clientes y stateholders",
+            "servicios": [
+                {"id": 1, "name": "servicio 1", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]},
+                {"id": 2, "name": "servicio 2", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]}
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Auditoría interna",
+            "servicios": [
+                {"id": 3, "name": "servicio 1", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]},
+                {"id": 4, "name": "servicio 2", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]}
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Desarrollo de soluciones",
+            "servicios": [
+                {"id": 5, "name": "servicio 1", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]},
+                {"id": 6, "name": "servicio 2", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]}
+            ]
+        },  
+        {
+            "id": 4,
+            "name": "Desarrollo organizacional",
+            "servicios": [
+                {"id": 5, "name": "servicio 1", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]},
+                {"id": 6, "name": "servicio 2", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]}
+            ]
+        }, 
+        {
+            "id": 5,
+            "name": "Gestión de riesgos, continuidad de negocio y calidad",
+            "servicios": [
+                {"id": 5, "name": "servicio 1", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]},
+                {"id": 6, "name": "servicio 2", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]}
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Operación de soluciones",
+            "servicios": [
+                {"id": 5, "name": "servicio 1", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]},
+                {"id": 6, "name": "servicio 2", "procesos": [
+                    {"id": 1, "name": "proceso 1"},
+                    {"id": 2, "name": "proceso 2"},
+                    {"id": 3, "name": "proceso 3"},
+                    {"id": 4, "name": "proceso 4"}
+                ]}
+            ]
+        }
+    ]
+}

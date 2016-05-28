@@ -7,6 +7,7 @@ class Graph extends Component {
 		super(props)
 	}
 	render () {
+		var cats = this.props.Categories
 		return (
 			<Chart
 		      config={{
@@ -17,7 +18,7 @@ class Graph extends Component {
 				  },
 		        tooltip: {
 				  format: {
-				    title: function (x) { return 'Datax ' + x; }
+				    title: function (x) { return cats[x]; }
 				  }
 				},
 				axis: {

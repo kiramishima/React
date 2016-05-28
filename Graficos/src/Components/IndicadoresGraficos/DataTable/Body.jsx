@@ -14,7 +14,7 @@ class Body extends Component {
   }
   _createRows () {
     var data = this.props.Data.value
-    return data.map((items) => <ItemRow Data={items}/>)
+    return data.map((items) => <ItemRow key={JSON.stringify(items)} Data={items}/>)
   }
   render () {
     if (this.props.Data.value.length > 0) {
