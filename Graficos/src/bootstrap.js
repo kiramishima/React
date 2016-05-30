@@ -9,8 +9,9 @@ import _ from 'lodash'
 import d3 from 'd3'
 import moment from 'moment'
 // import Application from './Components/Application/App.jsx'
-import GraphIndicadorApp from './Components/IndicadoresGraficos/index.jsx'
+// import GraphIndicadorApp from './Components/IndicadoresGraficos/index.jsx'
 // import IndicadorInfo from './Components/IndicadorInfo/index.jsx'
+import TendenciasApp from './Components/TendenciasIndicador/TendenciasApp.jsx'
 
 function onRender(val) {
     
@@ -43,17 +44,18 @@ function onRender(val) {
       
       // ReactDOM.render(<IndicadorInfo key={"UUID-78"} Data={mockData.process} />, document.querySelector('#appContainer'))
       var DataDefinition = [
-            {data: "UUID", label: "Id", hidden: true},
+            {data: "Id", label: "Id", hidden: true},
+            {data: "macro_name", label: "Macroproceso", hidden: false},
             {data: "service_name", label: "Servicio", hidden: false},
             {data: "process_name", label: "Proceso", hidden: false},
             {data: "ind_name", label: "Indicador", hidden: false},
             {data: "value", label: "Valor", hidden: false},
-            {data: "status", label: "", hidden: false, type: "svg"}
+            {data: "semaphore", label: "", hidden: false, type: "svg"}
       ]
-      let http2 = await fetch('tendencia.json')
-      var tendenciaMock = await http2.json()
+      // let http2 = await fetch('tendencia.json')
+      // var tendenciaMock = await http2.json()
       let urlTendencias = 'tendencia.json'
-      ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#pruebas'))
+      ReactDOM.render(<TendenciasApp key={"UUID-79"} Url={urlTendencias} DataDefinition={DataDefinition} />, document.querySelector('#appContainer'))
       // ReactDOM.render(<GraphIndicadorApp key={"UUID-99"} Url='info.json' UrlIndicadores='macroprocesos.json'/>, document.querySelector('#appContainer'))
     } catch(error) {
         console.log(error)

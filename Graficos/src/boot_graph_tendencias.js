@@ -1,4 +1,5 @@
 require('babel-polyfill')
+require('expose?$!expose?jQuery!jquery')
 import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash'
@@ -7,22 +8,16 @@ import moment from 'moment'
 import './sass/main.scss'
 import TendenciasApp from './Components/TendenciasIndicador/TendenciasApp.jsx'
 
-function onRender(val) {
-    
-    var dt = moment(parseInt(val)).format('L')
-    return dt
-}
-
-
 (async () => {
     try {
       var DataDefinition = [
-            {data: "UUID", label: "Id", hidden: true},
+            {data: "Id", label: "Id", hidden: true},
+            {data: "macro_name", label: "Macroproceso", hidden: false},
             {data: "service_name", label: "Servicio", hidden: false},
             {data: "process_name", label: "Proceso", hidden: false},
             {data: "ind_name", label: "Indicador", hidden: false},
             {data: "value", label: "Valor", hidden: false},
-            {data: "status", label: "", hidden: false, type: "svg"}
+            {data: "semaphore", label: "", hidden: false, type: "svg"}
       ]
 
       let urlTendencias = 'tendencia.json'

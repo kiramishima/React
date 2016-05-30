@@ -1,4 +1,5 @@
 require('babel-polyfill')
+require('expose?$!expose?jQuery!jquery')
 import './sass/main.scss'
 import './sass/Indicadores_Graficos.scss'
 import React from 'react'

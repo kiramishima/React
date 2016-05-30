@@ -17,7 +17,7 @@ class Item extends Component {
     if (this.props.Type === 'SVG') {
       this._svg = new ItemSVG({
         target: this.refs.item_svg,
-        color: `status_${this.props.Text}`,
+        color: `${this.props.Color}`,
         diameter: 30,
         text: ''
       })
@@ -38,6 +38,7 @@ class Item extends Component {
 
 Item.propTypes = {
   Text: PropTypes.string,
+  Color: PropTypes.string,
   Hidden: PropTypes.any,
   Type: PropTypes.string
 }
@@ -56,9 +57,10 @@ class ItemRow extends Component {
       // console.log('index', item)
       var text = this.props.ItemData[item.data]
       if (item.type === 'svg') {
-        return <Item key={`Item_${item.UUID}_${item.data}`} Text={text} Hidden={item.hidden} Type='SVG'/>
+        var color = this.props.ItemData['color']
+        return <Item key={`Item_${item.Id}_${item.data}`} Text={text} Color={color} Hidden={item.hidden} Type='SVG'/>
       } else {
-        return <Item key={`Item_${item.UUID}_${item.data}`} Text={text} Hidden={item.hidden}/>
+        return <Item key={`Item_${item.Id}_${item.data}`} Text={text} Hidden={item.hidden}/>
       }
     })
   }

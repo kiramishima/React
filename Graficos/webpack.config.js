@@ -5,7 +5,7 @@ var config = {
     // boot: path.join(__dirname, 'src'),
     app: ['bootstrap-loader', path.join(__dirname, 'src', 'bootstrap.js')],
     psar_main: path.join(__dirname, 'src', 'boot_graph_principal.js'),
-    psar_ind_info: path.join(__dirname, 'src', 'boot_graph_info_indicador.js'),
+    psar_ind_info: ['bootstrap-loader', path.join(__dirname, 'src', 'boot_graph_info_indicador.js')],
     psar_tendencias: path.join(__dirname, 'src', 'boot_graph_tendencias.js'),
     psar_grafica: path.join(__dirname, 'src', 'boot_graph.js')
   },

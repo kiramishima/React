@@ -12,11 +12,11 @@ class Body extends Component {
   }
   render () {
     if (!_.isEmpty(this.props.Data.value)) {
-      var items = this.props.Data.value.tendencias
+      var items = this.props.Data.value.indicators
       return (
           <tbody>
              {
-                 items.map((item) => <ItemRow key={`ItemRow_${item.UUID}`} ItemData={item} DataDefinition={this.props.DataDefinition}/>)
+                 items.map((item) => <ItemRow key={`ItemRow_${item.Id}`} ItemData={item} DataDefinition={this.props.DataDefinition}/>)
              }
           </tbody>
       )

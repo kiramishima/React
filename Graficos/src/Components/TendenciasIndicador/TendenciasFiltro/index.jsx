@@ -20,7 +20,7 @@ class TendenciasFiltro extends Component {
     var capturados = []
     var lists = []
     if (!_.isEmpty(this.props.TendenciasData.value)) {
-      capturados = Object.keys(_.groupBy(this.props.TendenciasData.value.tendencias, 'status'))
+      capturados = Object.keys(_.groupBy(this.props.TendenciasData.value.indicators, 'semaphore'))
       var subfilters = ['Todos', ..._.filter(capturados, function(o){ return o != ''})]
       lists = ['Capturado', 'No Capturado'].map((txt) => {
         if (txt !== 'No Capturado') {

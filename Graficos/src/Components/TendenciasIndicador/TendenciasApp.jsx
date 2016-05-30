@@ -30,17 +30,17 @@ class TendenciasApp extends Component {
      var cdata = Object.assign({}, this.state.data)
      if (cvalue !== null){
         if (cvalue === 'Todos'){
-          var fdata = _.filter(cdata.tendencias, function(o){ return o.status != ''})
-          cdata.tendencias = fdata
+          var fdata = _.filter(cdata.indicators, function(o){ return o.semaphore != ''})
+          cdata.indicators = fdata
           this.setState({filterData: cdata})
         }else{
-          var fdata = _.filter(cdata.tendencias, function(o){ return o.status == cvalue})
-          cdata.tendencias = fdata
+          var fdata = _.filter(cdata.indicators, function(o){ return o.semaphore == cvalue})
+          cdata.indicators = fdata
           this.setState({filterData: cdata})
         }
      }else {
-        var fdata = _.filter(cdata.tendencias, function(o){ return o.status == ''})
-        cdata.tendencias = fdata
+        var fdata = _.filter(cdata.indicators, function(o){ return o.semaphore == ''})
+        cdata.indicators = fdata
         this.setState({filterData: cdata})
      }
   }
