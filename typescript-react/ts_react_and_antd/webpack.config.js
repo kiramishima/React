@@ -2,11 +2,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require("path");
-const package = require('./package.json');
 
 module.exports = {
     entry: {
-        vendor: Object.keys(package.dependencies),
         app: "./src/index.tsx"
     },
     output: {
@@ -60,7 +58,13 @@ module.exports = {
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
     externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
+        "React": {
+            commonjs: 'React',
+            commonjs2: 'React'
+        },
+        "ReactDOM": {
+            commonjs: 'ReactDOM',
+            commonjs2: 'ReactDOM'
+        }
     }
 };
